@@ -1,0 +1,46 @@
+.sideBar{
+    width: 20%;
+    border-right: 1px solid  #CCCFDC;
+    background: #FFF;
+    height: 100vh;
+    width: 197px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-top: 32px;
+    padding-right: 32px;
+    padding-left: 19px;
+    position: absolute;
+}
+.sideIcon{
+    display: flex;
+    width: 149px;
+    padding: 12px;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    transition: all ease-in-out 0.2s;
+}
+.sideIcon p{
+    margin: 0px;
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    transition: all ease-in-out 0.2s;
+    
+}
+.sideIcon:hover {
+    /* Change the background color on hover */
+    background: #E5FFFF;
+    border-left: 3px solid #3F7ABA;
+    transition: all ease-in-out 0.2s;
+    cursor: pointer;
+    color: #3F7ABA;
+    /* Add any other styling you want for the hover effect */
+  }
+  
+  .sideIcon:hover p{
+    color: #3F7ABA;
+  }

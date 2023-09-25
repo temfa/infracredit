@@ -1,0 +1,34 @@
+.pageCov{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90vh;
+    padding: 32px;
+}
+.secionA{
+    background-color: blue;
+    height: 100%;
+    width: 50%;
+    max-width: 695px;
+    max-height: 960px;
+}
+.secionB{
+    width: 32%;
+    padding: 128px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.secionLogo{
+    margin-bottom: 80px;
+}
+.inputs{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.inputsBtn{
+    margin-top: 48px;
+    width: 100%;
+}

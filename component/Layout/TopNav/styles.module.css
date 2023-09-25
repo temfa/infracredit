@@ -1,0 +1,69 @@
+.topNamMain{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 32px;
+    border-bottom: 1px solid #CCCFDC;
+}
+.logoSearch{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notif{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logoInfra{
+    padding-top: 12px;
+    border-right: 1px solid #CCCFDC;
+    margin-right: 15px;
+    padding-right: 15px;
+}
+.logoSearch > svg{
+    width: 60%;
+}
+.logoSearch div > input{
+    display: flex;
+    width: 312px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 50px;
+    align-items: center;
+    gap: 16px;
+    border-radius: 100px;
+    border: 1px solid  #CCCFDC;
+}
+.notif{
+    padding-top: 12px;
+    display: flex;
+    gap: 24px;
+}
+.notif div > h1{
+    color: #272A3C;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.notif div > p{
+    color: #7C7F8C;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.notfBox{
+    padding: 12px;
+    border-radius: 8px;
+    background:#F4F7FF;
+}
+.search{
+    display: flex;
+    align-items: center;
+}
+.search > svg{
+    margin-right: -40px;z-index: 100000;
+}
