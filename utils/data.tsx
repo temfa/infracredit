@@ -7,22 +7,22 @@ export const sidenav = [
   {
     svg: <DashboardIcon />,
     title: "Dashboard",
-    link: "/Admin/Dashboard",
+    link: "/admin/Dashboard",
   },
   {
     svg: <Draftssvg />,
     title: "Drafts",
-    link: "/Admin/Draft",
+    link: "/admin/Draft",
   },
   {
     svg: <Deletedsvg />,
     title: "Deleted",
-    link: "/Admin/Deleted",
+    link: "/admin/Deleted",
   },
   {
     svg: <Taskssvg />,
     title: "Tasks",
-    link: "/Admin/Tasks",
+    link: "/admin/Tasks",
   },
 ];
 

@@ -58,7 +58,7 @@ const Login = () => {
                 text="Sign in"
                 active={active}
                 action={() => {
-                  router.push("/Admin/Dashboard");
+                  router.push("/admin/Dashboard");
                 }}
               />
             </div>
