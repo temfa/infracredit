@@ -1,17 +1,32 @@
-.colorBlue{
-    width: 100%;
-    border-radius: 8px;
-    background:  #1D6FA0;
-    padding-top: 16px;
-    padding-bottom: 16px;
+.colorBlue {
+  width: 100%;
+  border-radius: 8px;
+  background: #1d6fa0;
+  padding: 16px 0px;
+  /* color: #b8bbc8; */
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%;
+  transition: 1s all ease;
+  cursor: pointer;
+  border: none;
 }
-.colorBlue > p{
-    margin: 0px;
-    color: #B8BBC8;
-    text-align: center;
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 125%;
+
+.colorDefault {
+  color: var(--infra-neutral-200, #b8bbc8);
+  border-radius: 8px;
+  background: var(--infra-neutral-100, #cccfdc);
+  border: none;
+  width: 100%;
+  cursor: not-allowed;
+  padding: 16px 0px;
+  transition: 1s all ease;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 20px */
 }

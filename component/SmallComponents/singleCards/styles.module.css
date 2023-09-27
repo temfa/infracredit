@@ -1,0 +1,35 @@
+.singleCardsContainer {
+  width: 24%;
+  border-radius: 16px;
+  background: #fff;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-sizing: border-box;
+}
+
+.singleCardsHead {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.singleCardsHead div {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--infra-secondary-1900, #1d6fa0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.singleCardsHead > h2 {
+  color: var(--infra-secondary-1900, #1d6fa0);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

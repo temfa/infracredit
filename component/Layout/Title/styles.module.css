@@ -1,0 +1,52 @@
+.layoutHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.layoutUser {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.layoutUser > h2 {
+  color: var(--infra-neutral-900, #131628);
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.layoutUser h2 span {
+  color: var(--infra-secondary-1900, #1d6fa0);
+}
+
+.layoutUser p {
+  color: var(--infra-neutral-600, #686b78);
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.layoutAction {
+  border-radius: 8px;
+  background: var(--infra-secondary-1900, #1d6fa0);
+  padding: 14px 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.layoutAction h2 {
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

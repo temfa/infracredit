@@ -1,0 +1,80 @@
+.pageCov {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 160px;
+  height: 100vh;
+  padding: 32px;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+.secionA {
+  background: url("../../../public/images/background.png");
+  background-size: cover;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.secionA div {
+  width: 59%;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.secionA div h2 {
+  color: #fff;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 40px */
+}
+
+.secionA img {
+  margin: 0px auto;
+}
+
+.secionB {
+  /* width: 32%;
+  padding: 128px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; */
+  flex: 1;
+}
+
+.sectionBWrapper {
+  width: 71%;
+  max-width: 393px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.secionLogo {
+  width: fit-content;
+  margin: 0px auto;
+}
+
+.sectionBGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.inputsBtn {
+  width: 100%;
+}

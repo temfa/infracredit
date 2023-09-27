@@ -1,0 +1,9 @@
+.draftContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.draftWrapper {
+  width: 100%;
+}

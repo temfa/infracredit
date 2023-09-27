@@ -1,0 +1,120 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.dashboardWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.reportContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reportContainer > h2 {
+  color: var(--infra-neutral-900, #131628);
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.reportWrapper {
+  width: 100%;
+}
+
+.historyContainer {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+.historyContainer > h2 {
+  color: var(--infra-neutral-900, #131628);
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.historyHead {
+  justify-content: space-between;
+  padding: 16px 0px;
+  background: var(--infra-secondary-1900, #1d6fa0);
+  border-radius: 16px 16px 0px 0px;
+  display: flex;
+  width: 100%;
+}
+
+.historyHead p {
+  padding: 10px 8px;
+  box-sizing: border-box;
+  color: var(--infra-neutral-25, #f4f7ff);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.historyHead p:first-child,
+.historySingle p:first-child {
+  padding: 10px 4px 10px 12px;
+  width: 4%;
+}
+
+.historyHead p:nth-child(2),
+.historySingle p:nth-child(2) {
+  width: 34%;
+}
+
+.historyHead p:nth-child(3),
+.historySingle p:nth-child(3),
+.historyHead p:nth-child(5),
+.historySingle p:nth-child(5) {
+  width: 23%;
+}
+
+.historyHead p:nth-child(4),
+.historySingle p:nth-child(4) {
+  width: 13%;
+}
+
+.historyHead p:nth-child(6),
+.historySingle div {
+  width: 3%;
+}
+
+.historyBody {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--infra-neutral-100, #cccfdc);
+}
+
+.historySingle {
+  justify-content: space-between;
+  padding: 16px 0px;
+  display: flex;
+  width: 100%;
+}
+
+.historySingle > p {
+  color: var(--infra-neutral-700, #545764);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 20px */
+}
+
+.historySingle:nth-child(even) {
+  background: var(--infra-neutral-25, #f4f7ff);
+}

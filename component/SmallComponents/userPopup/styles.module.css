@@ -1,0 +1,126 @@
+.userPopupContainer {
+  width: 39%;
+  max-width: 565px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.userPopupHeader {
+  padding: 16px 16px 0px 0px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close {
+  border-radius: 100px;
+  background: rgba(255, 59, 48, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.close h2 {
+  color: #ff3b30;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.userPopupBody {
+  padding: 0px 40px 40px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.userPopup {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.userPopup div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.userPopup div h2 {
+  color: var(--infra-neutral-900, #272a3c);
+  font-family: "Inter", sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.userPopup div p {
+  color: var(--infra-primary-2900, #287750);
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.userPopupWrapper {
+  border-radius: 8px;
+  background: #f6f6f6;
+  width: 100%;
+  display: flex;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.userPopupSingle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.userPopupSingle div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.userPopupSingle div p {
+  color: #626262;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.userPopupSingle div h2 {
+  color: #1b1b1b;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.userPopupSingle > p {
+  color: #227cbf;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+}

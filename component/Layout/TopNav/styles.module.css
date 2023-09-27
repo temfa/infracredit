@@ -1,69 +1,91 @@
-.topNamMain{
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 32px;
-    border-bottom: 1px solid #CCCFDC;
+.topNamMain {
+  display: flex;
+  padding: 0px 32px;
+  box-sizing: border-box;
+  gap: 32px;
+  border-bottom: 1px solid #cccfdc;
 }
-.logoSearch{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+.logoInfra {
+  /* width: 80%; */
+  border-right: 1px solid var(--infra-neutral-100, #cccfdc);
+  padding: 24px 39px 24px 0px;
 }
-.notif{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+.logoInfra svg {
+  width: 100%;
 }
-.logoInfra{
-    padding-top: 12px;
-    border-right: 1px solid #CCCFDC;
-    margin-right: 15px;
-    padding-right: 15px;
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  align-items: center;
 }
-.logoSearch > svg{
-    width: 60%;
+
+.logoSearch {
+  display: flex;
+  gap: 16px;
+  width: 312px;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  border-radius: 100px;
+  border: 1px solid var(--infra-neutral-100, #cccfdc);
+  align-items: center;
 }
-.logoSearch div > input{
-    display: flex;
-    width: 312px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    padding-left: 50px;
-    align-items: center;
-    gap: 16px;
-    border-radius: 100px;
-    border: 1px solid  #CCCFDC;
+
+.logoSearch input {
+  display: flex;
+  align-items: center;
+  border: none;
+  flex: 1;
+  color: var(--infra-neutral-100, #cccfdc);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
-.notif{
-    padding-top: 12px;
-    display: flex;
-    gap: 24px;
+.notif {
+  display: flex;
+  gap: 24px;
 }
-.notif div > h1{
-    color: #272A3C;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+.notfBox {
+  border-radius: 50%;
+  background: #f4f7ff;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.notif div > p{
-    color: #7C7F8C;
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+
+.userDetail {
+  display: flex;
+  gap: 12px;
+  cursor: pointer;
 }
-.notfBox{
-    padding: 12px;
-    border-radius: 8px;
-    background:#F4F7FF;
+
+.user {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
-.search{
-    display: flex;
-    align-items: center;
+
+.user h2 {
+  color: var(--infra-neutral-900, #272a3c);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
-.search > svg{
-    margin-right: -40px;z-index: 100000;
+
+.user p {
+  color: var(--infra-neutral-500, #7c7f8c);
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }

@@ -1,0 +1,67 @@
+.singleReportCardCont,
+.singleReportCardConts {
+  width: 23%;
+  padding: 8px 8px 12px 8px;
+  border-radius: 16px;
+  border: 1px solid var(--infra-neutral-100, #cccfdc);
+  background: #fff;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  margin-right: 24px;
+}
+
+.singleReportCardConts {
+  width: 45%;
+}
+
+.singleReportCardCont > img,
+.singleReportCardConts > img {
+  width: 100%;
+}
+
+.singleReportCardCont > h2,
+.singleReportCardConts > h2 {
+  color: var(--infra-neutral-900, #272a3c);
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.singleReportCardCont div,
+.singleReportCardConts div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.singleReportCardCont div p,
+.singleReportCardConts div p {
+  color: var(--infra-primary-2900, #287750);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.singleReportCardCont div p span,
+.singleReportCardConts div p span {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.singleReportCardCont div h2,
+.singleReportCardConts div h2 {
+  color: var(--infra-secondary-1900, #1d6fa0);
+  font-family: "Inter", sans-serif;
+  cursor: pointer;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

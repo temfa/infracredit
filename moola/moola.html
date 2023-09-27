@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moola Bank Statement</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Work+Sans:wght@400;500;600;700;800;900&display=swap");
+
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    body {
+      width: 100%;
+    }
+
+    .moola-container {
+      width: 37%;
+      max-width: 595px;
+      margin: 0px auto;
+      padding: 24px 0px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 45px;
+    }
+
+    .moola-body {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .moola-cont {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .moola-logo {
+      width: fit-content;
+      margin: 0px auto;
+    }
+
+    .moola-header {
+      width: 100%;
+      padding: 12px 0px;
+      background: #2bd87c;
+      text-align: center;
+      color: #fff;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .moola-details {
+      width: 47%;
+      margin: 0px auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .moola-details h2 {
+      color: #127dfd;
+      font-family: "Inter", sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    .moola-details p {
+      color: #454545;
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    .moola-card-wrapper {
+      width: 95%;
+      margin: 0px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .moola-card-container {
+      width: 100%;
+      gap: 8px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .moola-card-single {
+      width: 32%;
+      background: #f8f8f8;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 0px;
+    }
+
+    .moola-card-single p {
+      color: var(--neutral-neutral-400, #4c4d50);
+      font-family: "Work Sans", sans-serif;
+      font-size: 8px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+
+    .moola-card-single h2 {
+      color: var(--neutral-neutral-700, #16171a);
+      font-family: "Work Sans", sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    .moola-card-single .green {
+      color: var(--success-success-600, #2eae4e);
+    }
+
+    .moola-card-single .red {
+      color: var(--error-error-600, #ff170a);
+    }
+
+    .moola-table-cont {
+      width: 95%;
+      margin: 0px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .moola-table-header,
+    .moola-table-body {
+      width: 100%;
+      display: flex;
+      gap: 4px;
+    }
+
+    .moola-table-header div {
+      width: 16%;
+      padding: 8px 0px 8px 8px;
+      box-sizing: border-box;
+      background: var(--success-success-50, #f2fcf5);
+    }
+
+    .moola-table-header div h2 {
+      color: var(--primary-primary-400-main, #2bd87c);
+      font-family: "Work Sans", sans-serif;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+
+    .moola-table-body p {
+      width: 16%;
+      padding: 8px 0px 8px 8px;
+      box-sizing: border-box;
+      color: var(--neutral-neutral-500, #1f2024);
+      font-family: "Work Sans", sans-serif;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    .moola-footer {
+      padding: 0px 16px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .moola-footer p {
+      color: var(--neutral-neutral-200, #98989a);
+      font-family: "Work Sans", sans-serif;
+      font-size: 8px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+    }
+
+    @media screen and (max-width: 500px) {
+      .moola-container {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
+  <body>
+    <div class="moola-container">
+      <div class="moola-body">
+        <div class="moola-cont">
+          <div class="moola-logo">
+            <img src="./moola.svg" alt="moola-logo" />
+          </div>
+          <div class="moola-header">
+            <h2>Bank Statement</h2>
+          </div>
+          <div class="moola-details">
+            <h2>OLUSANYA EZEKIEL AYOMIDE</h2>
+            <p>No 23, along Muritala Muhammed Airport, beside AUD School 1, Ikeja Lagos State, Nigeria</p>
+          </div>
+          <div class="moola-card-wrapper">
+            <div class="moola-card-container">
+              <div class="moola-card-single">
+                <p>Account:</p>
+                <h2>2486850301</h2>
+              </div>
+              <div class="moola-card-single">
+                <p>Date:</p>
+                <h2>10/03/23 - 10/05/23</h2>
+              </div>
+              <div class="moola-card-single">
+                <p>Opening balance:</p>
+                <h2>234,098.00</h2>
+              </div>
+            </div>
+            <div class="moola-card-container">
+              <div class="moola-card-single">
+                <p>Closing balance:</p>
+                <h2>234,098.00</h2>
+              </div>
+              <div class="moola-card-single">
+                <p>Money In:</p>
+                <h2 class="green">234,098.00</h2>
+              </div>
+              <div class="moola-card-single">
+                <p>Money Out:</p>
+                <h2 class="red">234,098.00</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="moola-table-cont">
+          <div class="moola-table-header">
+            <div><h2>Date</h2></div>
+            <div><h2>Credit</h2></div>
+            <div><h2>Debit</h2></div>
+            <div><h2>Balance</h2></div>
+            <div><h2>Category</h2></div>
+            <div><h2>Description</h2></div>
+          </div>
+          <div class="moola-table-body">
+            <p>01/12/2023</p>
+            <p>1,000,454.00</p>
+            <p></p>
+            <p>1,000,454.00</p>
+            <p>Deposit</p>
+            <p>School fees</p>
+          </div>
+          <div class="moola-table-body">
+            <p>01/12/2023</p>
+            <p>1,000,454.00</p>
+            <p>1,000,454.00</p>
+            <p>1,000,454.00</p>
+            <p>Deposit</p>
+            <p>School fees</p>
+          </div>
+          <div class="moola-table-body">
+            <p>01/12/2023</p>
+            <p></p>
+            <p>1,000,454.00</p>
+            <p>1,000,454.00</p>
+            <p>Deposit</p>
+            <p>School fees</p>
+          </div>
+          <div class="moola-table-body">
+            <p>01/12/2023</p>
+            <p>1,000,454.00</p>
+            <p></p>
+            <p>1,000,454.00</p>
+            <p>Deposit</p>
+            <p>School fees</p>
+          </div>
+          <div class="moola-table-body">
+            <p>01/12/2023</p>
+            <p>1,000,454.00</p>
+            <p></p>
+            <p>1,000,454.00</p>
+            <p>Deposit</p>
+            <p>School fees</p>
+          </div>
+          <div class="moola-table-body">
+            <p>01/12/2023</p>
+            <p>1,000,454.00</p>
+            <p>1,000,454.00</p>
+            <p>1,000,454.00</p>
+            <p>Deposit</p>
+            <p>School fees</p>
+          </div>
+          <div class="moola-table-body">
+            <p>01/12/2023</p>
+            <p>1,000,454.00</p>
+            <p>1,000,454.00</p>
+            <p>1,000,454.00</p>
+            <p>Deposit</p>
+            <p>School fees</p>
+          </div>
+          <div class="moola-table-body">
+            <p>01/12/2023</p>
+            <p>1,000,454.00</p>
+            <p>1,000,454.00</p>
+            <p>1,000,454.00</p>
+            <p>Deposit</p>
+            <p>School fees</p>
+          </div>
+        </div>
+      </div>
+      <div class="moola-footer">
+        <p>
+          MOOLA Bank (54GH78J(). All rights reserved. All deposits are insured by the Nigerian Deposit Insurance Corporation (NDIC) Davenport Micro Finance Bank is licensed by the
+          Central Bank Of Nigeria. “MOOLA” is the Trademark name of the Davenport Micro Finance Bank. NO 34, Murital way along ikeja expressway, Lagos State Nigeria.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
