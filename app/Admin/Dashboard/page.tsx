@@ -55,7 +55,7 @@ const Dashboard = () => {
             <div className={styles.historyBody}>
               {report?.map((item, index) => {
                 return (
-                  <div className={styles.historySingle}>
+                  <div className={styles.historySingle} key={index}>
                     <p>{index + 1}</p>
                     <p>{item.title}</p>
                     <p>{item.createdBy}</p>
