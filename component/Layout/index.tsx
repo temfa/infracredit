@@ -27,7 +27,7 @@ const Layout = ({ children }: { children: any }) => {
         transition={{ type: "linear" }} // Set the transition to linear
         className="">
         <div className={styles.layoutContainer}>
-          {pathname.split("/")[1] === "admin" ? (
+          {pathname.split("/")[1] ? (
             <Topnav
               action={() => {
                 setoverlay(true);
@@ -42,8 +42,8 @@ const Layout = ({ children }: { children: any }) => {
                 }}
               />
             ) : null}
-            {pathname.split("/")[1] === "admin" ? <Sidenav /> : null}
-            <div className={pathname.split("/")[1] === "admin" ? styles.layoutCont : ""}>{children}</div>
+            {pathname.split("/")[1] ? <Sidenav /> : null}
+            <div className={pathname.split("/")[1] ? styles.layoutCont : ""}>{children}</div>
           </div>
         </div>
       </motion.div>
