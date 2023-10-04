@@ -16,6 +16,7 @@ const Layout = ({ children }: { children: any }) => {
   };
   // const router = useRouter();
   const pathname = usePathname();
+  console.log(pathname);
   return (
     <AnimatePresence>
       <motion.div
