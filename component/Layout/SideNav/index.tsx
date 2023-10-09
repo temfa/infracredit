@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import { sidenav } from "@/utils/data";
+// import { sidenav } from "@/utils/data";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Logout from "@/component/Svgs/logout";
 import LogoutPopup from "@/component/SmallComponents/logoutPopup";
+import SidenavData from "@/utils/sidenavData";
 
 const Sidenav = () => {
   const pathName = usePathname();
@@ -14,16 +15,19 @@ const Sidenav = () => {
     <div className={styles.sideBar}>
       <div className={styles.sidebarLink}>
         <p>Menu</p>
-        {sidenav.map((item, index) => {
-          const isActive = pathName === item.link;
-          const itemClass = isActive ? `${styles.sideIcon} ${styles.active}` : styles.sideIcon;
-
-          return (
-            <div className={itemClass} key={index}>
+        {SidenavData({
+          color: pathName === "/admin/Dashboard" ? "#3F7ABA" : "#545764",
+          color2: pathName === "/admin/Draft" ? "#3F7ABA" : "#545764",
+          color3: pathName === "/admin/Deleted" ? "#3F7ABA" : "#545764",
+          color4: pathName === "/admin/Tasks" ? "#3F7ABA" : "#545764",
+          color5: pathName === "/admin" ? "#3F7ABA" : "#545764",
+        })?.map((item, index) => {
+          return item !== null ? (
+            <div className={pathName === item.link ? `${styles.sideIcon} ${styles.active}` : styles.sideIcon} key={index}>
               <span className={styles.icon}>{item.svg}</span>
               <Link href={item.link}>{item.title}</Link>
             </div>
-          );
+          ) : null;
         })}
       </div>
       <div className={styles.sidebarOther}>

@@ -1,12 +1,17 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import styles from "./styles.module.css";
 import Cards from "@/component/SmallComponents/cards";
 import SingleReportCard from "@/component/SmallComponents/singleReportCard";
 import ThreeDots from "@/component/Svgs/threeDots";
 import Title from "@/component/Layout/Title";
+import AssignReport from "@/component/assignReport";
+// import DashboardLayout from "@/component/layouts/dashboard-layout";
 // import Plus from "@/component/Svgs/plus";
 
 const Dashboard = () => {
+  const [state, setState] = useState(false);
   const report = [
     {
       title: "2023 Annual Financial Budget Report v1.0",
@@ -28,17 +33,24 @@ const Dashboard = () => {
     },
   ];
   return (
+    // <DashboardLayout>
     <div className={styles.dashboardContainer}>
-      <Title text="Welcome back" />
+      <Title
+        text="Welcome back"
+        admin="dashboard"
+        action={() => {
+          setState(true);
+        }}
+      />
       <div className={styles.dashboardWrapper}>
         <Cards />
         <div className={styles.reportContainer}>
-          <h2>Report Templates</h2>
+          <h2>Current Tasks</h2>
           <div className={styles.reportWrapper}>
-            <SingleReportCard title="Annual Report Template" number="123,566" text="Edit" type={false} />
-            <SingleReportCard title="Quarterly Report Template" number="123,566" text="Edit" type={false} />
-            <SingleReportCard title="Monthly Report Template" number="123,566" text="Edit" type={false} />
-            <SingleReportCard title="Weekly Report Template" number="123,566" text="Edit" type={false} />
+            <SingleReportCard title="Annual Report Template" number="12" text="Edit" type={false} />
+            <SingleReportCard title="Quarterly Report Template" number="12" text="Edit" type={false} />
+            {/* <SingleReportCard title="Monthly Report Template" number="123,566" text="Edit" type={false} />
+            <SingleReportCard title="Weekly Report Template" number="123,566" text="Edit" type={false} /> */}
           </div>
         </div>
         <div className={styles.historyContainer}>
@@ -71,7 +83,15 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      {state ? (
+        <AssignReport
+          action={() => {
+            setState(false);
+          }}
+        />
+      ) : null}
     </div>
+    // </DashboardLayout>
   );
 };
 

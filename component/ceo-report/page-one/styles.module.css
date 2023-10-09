@@ -1,0 +1,31 @@
+.pageOne {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 32px;
+}
+
+.pageOne div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pageOne div p {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 165.5%; /* 23.17px */
+}
+
+.pageOne div h2 {
+  color: #47b65c;
+  width: 70%;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #227cbf;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

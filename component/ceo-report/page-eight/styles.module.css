@@ -1,0 +1,80 @@
+.pageEight {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pageEight > h2 {
+  color: #47b65c;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.portfolioTable {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.portfolioTable > h2 {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.portfolioSingle {
+  display: flex;
+  border-bottom: 1px solid #7c7c7c;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.portfolioSingle:first-child {
+  border-top: 1px solid #7c7c7c;
+}
+
+.portfolioSingle p:first-child {
+  width: 62%;
+  color: #363636;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.portfolioSingle p:last-child {
+  width: 38%;
+  color: #000;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.portfolioChart {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.portfolioChart > h2 {
+  color: #227cbf;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.portfolioChart2 {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.portfolioChart2 div {
+  width: 50%;
+}

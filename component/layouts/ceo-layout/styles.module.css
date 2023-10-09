@@ -1,0 +1,71 @@
+.ceoLayout {
+  width: 100%;
+  background: #fff;
+  padding: 32px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ceoHeader {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 32px;
+  box-sizing: border-box;
+}
+
+.ceoLayoutBody {
+  padding: 0px 32px;
+  box-sizing: border-box;
+}
+
+.ceoLayoutFooter {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.ceoLayoutText {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 46%;
+}
+
+.ceoLayoutText div {
+  width: 100%;
+  padding: 10px 0px;
+  background: linear-gradient(270deg, #47b65c 0%, #227cbf 100%);
+  text-align: center;
+}
+
+.ceoLayoutText div h2 {
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 20px */
+}
+
+.ceoLayoutText > p {
+  color: #000;
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.ceoLayoutFooter > p {
+  color: #47b65c;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.ceoLayoutLine {
+  width: 44%;
+  height: 8px;
+  background: #b3b3b3;
+}

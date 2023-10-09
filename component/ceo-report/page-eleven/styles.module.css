@@ -1,0 +1,60 @@
+.pageEleven {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pageEleven > h2 {
+  color: #47b65c;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.pageEleven > p {
+  color: #272727;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 17.5px */
+}
+
+.investmentLine {
+  display: flex;
+  align-items: center;
+}
+
+.investmentLine h3 {
+  border-radius: 100px;
+  background: linear-gradient(270deg, #47b65c 0%, #227cbf 100%);
+  width: 292px;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 20px */
+}
+
+.financialCharts {
+  display: flex;
+}
+
+.financialCharts div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.financialCharts div p {
+  color: #272727;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 165.5%; /* 23.17px */
+}

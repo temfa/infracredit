@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./styles.module.css";
+import Plus from "@/component/Svgs/plus";
+import Assign from "@/component/Svgs/assign";
 
-const Title = ({ text }: { text: string }) => {
+const Title = ({ text, admin, action }: { text: string; admin?: string; action?: any }) => {
   return (
     <div className={styles.layoutHead}>
       <div className={styles.layoutUser}>
@@ -9,16 +11,23 @@ const Title = ({ text }: { text: string }) => {
           {text}
           {text === "Welcome back" ? (
             <>
-              , <span>Rahman Peace</span>
+              , <span>Olusanya Ezekiel</span>
             </>
           ) : null}
         </h2>
         <p>12th, May 2023</p>
       </div>
-      {/* <div className={styles.layoutAction}>
+      {admin === "admin" ? (
+        <div className={styles.layoutAction} onClick={action}>
           <Plus />
-          <h2>Edit New Report</h2>
-        </div> */}
+          <h2>Create New User</h2>
+        </div>
+      ) : admin === "dashboard" ? (
+        <div className={styles.layoutAction2} onClick={action}>
+          <Assign />
+          <h2>Assign New Report</h2>
+        </div>
+      ) : null}
     </div>
   );
 };

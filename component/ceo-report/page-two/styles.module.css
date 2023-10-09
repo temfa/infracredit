@@ -1,0 +1,151 @@
+.pageTwo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 64px;
+}
+
+.strategicPlan {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.strategicPlan h2 {
+  color: #47b65c;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  width: 70%;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #227cbf;
+}
+
+.strategicPlan p {
+  color: #272727;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 17.5px */
+}
+
+.currentPort {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.currentPort > h2 {
+  color: #227cbf;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.currentPort > div {
+  display: flex;
+  gap: 70px;
+  width: 100%;
+}
+
+.currentPort > div p {
+  width: 42%;
+  color: #272727;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 165.5%; /* 23.17px */
+}
+
+.currentPort .currentChart {
+  /* flex: 1; */
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  /* gap: 16px; */
+}
+
+.currentChart > h2 {
+  color: #47b65c;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; /* 15px */
+}
+
+.keyStatistics {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.keyStatistics div h2 {
+  color: #227cbf;
+  padding-bottom: 4px;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.smallLine {
+  background: linear-gradient(270deg, #47b65c 0%, #227cbf 100%);
+  width: 100%;
+  height: 2px;
+}
+
+.keyTable {
+  width: 100%;
+  border-left: 1px solid #227cbf;
+  border-right: 1px solid #227cbf;
+}
+
+.keyTableHeader {
+  width: 100%;
+  display: flex;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  background: #227cbf;
+  align-items: center;
+}
+
+.keyTableHeader p {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 17.5px */
+}
+
+.keyTableHeader p:first-child,
+.keyTableSingle p:first-child {
+  width: 49%;
+}
+
+.keyTableHeader p:nth-child(2),
+.keyTableHeader p:nth-child(3),
+.keyTableHeader p:nth-child(4),
+.keyTableSingle p:nth-child(2),
+.keyTableSingle p:nth-child(3),
+.keyTableSingle p:nth-child(4) {
+  width: 17%;
+  text-align: right;
+}
+
+.keyTableSingle {
+  display: flex;
+  width: 100%;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #227cbf;
+}
+
+.keyTableSingle p {
+  color: #000;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; /* 12.5px */
+}

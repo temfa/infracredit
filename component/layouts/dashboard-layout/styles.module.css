@@ -1,0 +1,26 @@
+.layoutContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.layoutBody {
+  display: flex;
+  position: relative;
+}
+
+.layoutCont {
+  background: var(--infra-neutral-25, #f4f7ff);
+  padding: 32px;
+  box-sizing: border-box;
+  flex: 1;
+  height: 90vh;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.layoutCont::-webkit-scrollbar {
+  display: none;
+}

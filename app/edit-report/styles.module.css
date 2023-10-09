@@ -1,0 +1,93 @@
+.editReport {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.editReportBody {
+  width: 100%;
+  background: var(--infra-neutral-25, #f4f7ff);
+  padding: 32px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.editReportHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.editReportText {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.editReportText div {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid var(--infra-neutral-100, #cccfdc);
+  background: #fff;
+}
+
+.editReportText h2 {
+  color: var(--infra-neutral-900, #131628);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.editReportAction {
+  display: flex;
+  gap: 16px;
+}
+
+.editReportAction button {
+  border: none;
+  padding: 14px 20px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.editReportAction button:first-child {
+  border: 1px solid var(--warning-warning-200, #ffcb8a);
+  color: var(--warning-warning-500, #ff8f00);
+}
+
+.editReportAction button:nth-child(2) {
+  border: 1px solid var(--infra-primary-2400, #8cdbb4);
+  background: var(--infra-primary-225, #f0ffff);
+  color: var(--infra-primary-2900, #287750);
+}
+
+.editReportAction button:nth-child(3) {
+  background: var(--infra-secondary-1900, #1d6fa0);
+  color: #fff;
+}
+
+.editReportContainer {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.editReportContent {
+  width: 63%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

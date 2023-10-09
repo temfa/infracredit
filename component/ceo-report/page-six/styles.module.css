@@ -1,0 +1,22 @@
+.pageSix {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 32px;
+}
+
+.pageSix > h2 {
+  color: #227cbf;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.pageSix > p {
+  color: #272727;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 165.5%; /* 23.17px */
+}

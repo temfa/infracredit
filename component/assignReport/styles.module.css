@@ -1,0 +1,54 @@
+.createUser {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.createUser > h2 {
+  color: var(--infra-primary-2900, #287750);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.createGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.createGroup label {
+  color: var(--infra-neutral-700, #545764);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.createGroup input,
+.createGroup select {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  border: 1px solid var(--infra-neutral-50, #e0e3f0);
+  background: #fff;
+  color: var(--infra-neutral-100, #cccfdc);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.createGroup input:focus,
+.createGroup select:focus {
+  outline: none;
+}
+
+.createCont {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}

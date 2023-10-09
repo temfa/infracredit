@@ -40,11 +40,32 @@
   gap: 12px;
   align-items: center;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .layoutAction h2 {
   color: #fff;
   font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.layoutAction2 {
+  border-radius: 8px;
+  border: 1px solid var(--infra-primary-2400, #8cdbb4);
+  background: var(--infra-primary-225, #f0ffff);
+  padding: 14px 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.layoutAction2 h2 {
+  color: var(--infra-primary-2900, #287750);
   font-size: 16px;
   font-style: normal;
   font-weight: 600;

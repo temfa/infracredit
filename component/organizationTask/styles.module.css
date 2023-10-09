@@ -1,0 +1,136 @@
+.organizationTask {
+  width: 100%;
+  border-radius: 16px;
+  background: var(--White, #fff);
+  display: flex;
+  padding: 32px 36px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.organizationHead {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.organizationHead h2 {
+  color: var(--infra-neutral-900, #131628);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.organizationHead p {
+  display: flex;
+  align-items: center;
+  color: var(--infra-neutral-700, #545764);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.organizationLevel {
+  display: flex;
+  width: 100%;
+}
+
+.organizationLevel > div {
+  width: 22%;
+}
+
+.organizationLevel .toDo,
+.organizationLevel .inProgress,
+.organizationLevel .review,
+.organizationLevel .completed,
+.organizationLevel .closeOut {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.organizationLevel .toDo h2,
+.organizationLevel .inProgress h2,
+.organizationLevel .review h2,
+.organizationLevel .completed h2,
+.organizationLevel .closeOut h2 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration-line: underline;
+}
+
+.organizationLevel .toDo span,
+.organizationLevel .inProgress span,
+.organizationLevel .review span,
+.organizationLevel .completed span,
+.organizationLevel .closeOut span {
+  font-weight: 700;
+}
+
+.organizationLevel .toDo div {
+  border-radius: 16px;
+  height: 27px;
+  background: var(--infra-neutral-900, #272a3c);
+  z-index: 5;
+  width: 100%;
+}
+
+.organizationLevel .toDo h2 {
+  color: var(--infra-neutral-900, #272a3c);
+}
+
+.organizationLevel .inProgress div {
+  border-radius: 16px;
+  height: 27px;
+  background: var(--info-info-500, #3c76f1);
+  margin-left: -20px;
+  z-index: 4;
+}
+
+.organizationLevel .inProgress h2 {
+  color: var(--info-info-500, #3c76f1);
+}
+
+.organizationLevel .review div {
+  border-radius: 16px;
+  height: 27px;
+  background: var(--warning-warning-500, #ff8f00);
+  margin-left: -20px;
+  z-index: 3;
+}
+
+.organizationLevel .review h2 {
+  color: var(--warning-warning-500, #ff8f00);
+}
+
+.organizationLevel .completed div {
+  border-radius: 16px;
+  height: 27px;
+  background: var(--success-success-500, #34c759);
+  margin-left: -20px;
+  z-index: 2;
+}
+
+.organizationLevel .completed h2 {
+  color: var(--success-success-500, #34c759);
+}
+
+.organizationLevel .closeOut div {
+  border-radius: 16px;
+  height: 27px;
+  background: var(--infra-secondary-1900, #1d6fa0);
+  margin-left: -20px;
+  z-index: 1;
+}
+
+.organizationLevel .closeOut h2 {
+  color: var(--infra-secondary-1900, #1d6fa0);
+}

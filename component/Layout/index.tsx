@@ -1,11 +1,11 @@
 "use client";
-import React, { useReducer, useState } from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
-import Topnav from "./TopNav";
 import { useRouter, usePathname } from "next/navigation";
-import Sidenav from "./SideNav";
 import { AnimatePresence, motion } from "framer-motion";
+import Topnav from "./TopNav";
 import UserPopup from "../SmallComponents/userPopup";
+import Sidenav from "./SideNav";
 
 const Layout = ({ children }: { children: any }) => {
   const [overlay, setoverlay] = useState(false);
@@ -16,6 +16,7 @@ const Layout = ({ children }: { children: any }) => {
   };
   // const router = useRouter();
   const pathname = usePathname();
+  console.log(pathname.split("/")[1]);
   return (
     <AnimatePresence>
       <motion.div
@@ -27,7 +28,13 @@ const Layout = ({ children }: { children: any }) => {
         transition={{ type: "linear" }} // Set the transition to linear
         className="">
         <div className={styles.layoutContainer}>
-          {pathname.split("/")[1] ? (
+          {pathname.split("/")[1] === "admin" ? (
+            <Topnav
+              action={() => {
+                setoverlay(true);
+              }}
+            />
+          ) : pathname.split("/")[1] === "edit-report" ? (
             <Topnav
               action={() => {
                 setoverlay(true);
@@ -42,8 +49,8 @@ const Layout = ({ children }: { children: any }) => {
                 }}
               />
             ) : null}
-            {pathname.split("/")[1] ? <Sidenav /> : null}
-            <div className={pathname.split("/")[1] ? styles.layoutCont : ""}>{children}</div>
+            {pathname.split("/")[1] === "admin" ? <Sidenav /> : null}
+            <div className={pathname.split("/")[1] === "admin" ? styles.layoutCont : ""}>{children}</div>
           </div>
         </div>
       </motion.div>

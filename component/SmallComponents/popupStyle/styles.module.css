@@ -1,0 +1,40 @@
+.popupStyle {
+  width: 36%;
+  max-width: 520px;
+  border-radius: 16px;
+  background: #fff;
+  padding: 16px 16px 48px 48px;
+  box-sizing: border-box;
+}
+
+.popupHeader {
+  padding: 16px 16px 0px 0px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close {
+  border-radius: 100px;
+  background: rgba(255, 59, 48, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.close h2 {
+  color: #ff3b30;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.popupBody {
+  padding: 0px 40px 40px 40px;
+  box-sizing: border-box;
+}

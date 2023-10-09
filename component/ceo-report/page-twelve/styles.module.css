@@ -1,0 +1,57 @@
+.pageTwelve {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header h2 {
+  color: #47b65c;
+  width: 30%;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.pageTwelve > p {
+  color: #272727;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 165.5%; /* 23.17px */
+}
+
+.signatures {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.signatures p {
+  color: #5e5e5e;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 20px */
+}
+
+.signatures div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.signatures div h2 {
+  color: #0e0e0e;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; /* 20px */
+}

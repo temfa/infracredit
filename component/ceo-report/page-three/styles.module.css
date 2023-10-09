@@ -1,0 +1,152 @@
+.pageThree {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+
+.fy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.fy h2 {
+  color: #227cbf;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.pageThree > p {
+  color: #272727;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 17.5px */
+}
+
+.categorization {
+  display: flex;
+  justify-content: space-between;
+}
+
+.categorization .pie {
+  width: 31%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.categorization .pie h2 {
+  color: #47b65c;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; /* 15px */
+}
+
+.categorization .table {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.categorization .table h2 {
+  color: #47b65c;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 125%; /* 17.5px */
+}
+
+.tableBody {
+  border-left: 1px solid #272727;
+  border-right: 1px solid #272727;
+  background: #fff;
+}
+
+.tableHeader {
+  width: 100%;
+  display: flex;
+  background: #227cbf;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.tableHeader p {
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 15px */
+  text-align: center;
+}
+
+.tableHeader p:first-child,
+.tableSingle p:first-child {
+  width: 7%;
+}
+
+.tableHeader p:nth-child(2),
+.tableSingle p:nth-child(2) {
+  width: 39%;
+}
+
+.tableHeader p:nth-child(3),
+.tableSingle p:nth-child(3) {
+  width: 44%;
+}
+
+.tableHeader p:nth-child(4),
+.tableSingle p:nth-child(4) {
+  width: 10%;
+}
+
+.tableSingle {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid #272727;
+  box-sizing: border-box;
+}
+
+.tableSingle p {
+  color: #272727;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  padding: 4px 8px;
+  line-height: 125%; /* 12.5px */
+}
+
+.tableSingle p:first-child,
+.tableSingle p:nth-child(2),
+.tableSingle p:nth-child(3) {
+  border-right: 1px solid #272727;
+}
+
+.targetChart {
+  display: flex;
+  justify-content: space-between;
+}
+
+.targetChart div {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.targetChart div h2 {
+  color: #47b65c;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 125%; /* 17.5px */
+}

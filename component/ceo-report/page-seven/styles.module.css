@@ -1,0 +1,30 @@
+.pageSeven {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 274px;
+}
+
+.pageSeven > h2 {
+  color: #47b65c;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.pageSeven > p {
+  color: #272727;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 165.5%; /* 23.17px */
+}
+
+.pageSeven > h3 {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 17.5px */
+}

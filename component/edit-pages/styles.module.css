@@ -1,0 +1,29 @@
+.editReportPages {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 13%;
+  padding: 16px 16px 344px 16px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: 1px solid var(--infra-neutral-50, #e0e3f0);
+  background: #fff;
+}
+
+.editReportPages > h2 {
+  color: var(--infra-primary-2900, #287750);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.editReportPages div {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--infra-neutral-50, #e0e3f0);
+  background: var(--infra-neutral-25, #f4f7ff);
+  height: 120px;
+  padding: 4px;
+  box-sizing: border-box;
+}
