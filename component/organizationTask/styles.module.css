@@ -79,7 +79,7 @@
   border-radius: 16px;
   height: 27px;
   background: var(--infra-neutral-900, #272a3c);
-  z-index: 5;
+
   width: 100%;
 }
 
@@ -92,7 +92,6 @@
   height: 27px;
   background: var(--info-info-500, #3c76f1);
   margin-left: -20px;
-  z-index: 4;
 }
 
 .organizationLevel .inProgress h2 {
@@ -104,7 +103,6 @@
   height: 27px;
   background: var(--warning-warning-500, #ff8f00);
   margin-left: -20px;
-  z-index: 3;
 }
 
 .organizationLevel .review h2 {
@@ -116,7 +114,6 @@
   height: 27px;
   background: var(--success-success-500, #34c759);
   margin-left: -20px;
-  z-index: 2;
 }
 
 .organizationLevel .completed h2 {
@@ -128,7 +125,6 @@
   height: 27px;
   background: var(--infra-secondary-1900, #1d6fa0);
   margin-left: -20px;
-  z-index: 1;
 }
 
 .organizationLevel .closeOut h2 {
