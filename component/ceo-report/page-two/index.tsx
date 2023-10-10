@@ -81,7 +81,7 @@ const CeoPageTwo = ({ edit, popupAction, popup }: { edit: boolean; popupAction: 
                   <p></p>
                 </div>
                 <div className={styles.chartBody}>
-                  {chartDatas?.data?.datasets[0].data?.map((item, index): React.ReactNode => {
+                  {chartDatas?.data?.datasets[0].data?.map((item, index) => {
                     console.log(item);
                     return (
                       <div key={index}>
@@ -93,12 +93,12 @@ const CeoPageTwo = ({ edit, popupAction, popup }: { edit: boolean; popupAction: 
                                 <input
                                   type="text"
                                   // value={chartDatas?.data?.labels[index]}
-                                  onChange={(e) =>
-                                    setChartDatas({
-                                      ...chartDatas,
-                                      data: { ...chartDatas.data, datasets: [{ ...chartDatas.data.datasets[0], data: [...chartDatas.data.datasets[0].data] }] },
-                                    })
-                                  }
+                                  // onChange={(e) =>
+                                  //   setChartDatas({
+                                  //     ...chartDatas,
+                                  //     data: { ...chartDatas.data, datasets: [{ ...chartDatas.data.datasets[0], data: [...chartDatas.data.datasets[0].data] }] },
+                                  //   })
+                                  // }
                                 />
                               </div>
                             </div>

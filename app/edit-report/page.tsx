@@ -35,7 +35,11 @@ const EditReport = () => {
         <div className={styles.editReportHead}>
           <div className={styles.editReportText}>
             <div>
-              <Undo action={router.push("/dashboard")} />
+              <Undo
+                action={() => {
+                  router.push("/admin/Dashboard");
+                }}
+              />
             </div>
             {edit ? (
               <input
@@ -53,7 +57,7 @@ const EditReport = () => {
             {edit ? (
               <button
                 onClick={() => {
-                  window.location.reload();
+                  window?.location?.reload();
                 }}>
                 Cancel Edit
               </button>
