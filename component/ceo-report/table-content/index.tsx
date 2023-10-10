@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
 
-const TableContent = () => {
-  interface sample {
+const TableContent = ({ edit }: { edit: boolean }) => {
+  interface Sample {
     title: string;
     number: number;
   }
-  const tableContent: sample[] = [
+  const [tableContent, setTableContent] = useState<Sample[]>([
     {
       title: "Key Macro Highlghts of Q1 2022",
       number: 2,
@@ -39,7 +39,7 @@ const TableContent = () => {
       title: "Appendices",
       number: 15,
     },
-  ];
+  ]);
   return (
     <div className={styles.tableContent}>
       <div className={styles.tableContentHeader}>
@@ -52,7 +52,24 @@ const TableContent = () => {
             <div className={styles.tableContentSingle} key={index}>
               <div className={styles.tableContentText}>
                 <div className={styles.tableContentSquare}></div>
-                <h2>{item.title}</h2>
+                {edit ? (
+                  <input
+                    type="text"
+                    value={item.title}
+                    onChange={(e) => {
+                      const newState = tableContent.map((item, index2) => {
+                        if (index === index2) {
+                          return { ...item, title: e.target.value };
+                        } else {
+                          return item;
+                        }
+                      });
+                      setTableContent(newState);
+                    }}
+                  />
+                ) : (
+                  <h2>{item.title}</h2>
+                )}
               </div>
               <p>{item.number}</p>
             </div>

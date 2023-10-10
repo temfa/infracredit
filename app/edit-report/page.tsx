@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
 // import Topnav from "@/component/Layout/TopNav";
 import Undo from "@/component/Svgs/undo";
@@ -19,21 +19,59 @@ import CeoPageTen from "@/component/ceo-report/page-ten";
 import CeoPageEleven from "@/component/ceo-report/page-eleven";
 import CeoPageTwelve from "@/component/ceo-report/page-twelve";
 import CeoLastPage from "@/component/ceo-report/last-page";
+import CeoPageThirteen from "@/component/ceo-report/page-thirteen";
+import CeoPageFourteen from "@/component/ceo-report/page-fourteen";
+import CeoPageSixteen from "@/component/ceo-report/page-fourteen copy";
+import { useRouter } from "next/navigation";
 
 const EditReport = () => {
+  const router = useRouter();
+  const [edit, setEdit] = useState(false);
+  const [title, setTitle] = useState("CEO REPORT");
+  const [popup, setPopup] = useState(false);
   return (
-    <div className={styles.editReport}>
+    <div className={popup === true ? styles.editReports : styles.editReport}>
       <div className={styles.editReportBody}>
         <div className={styles.editReportHead}>
           <div className={styles.editReportText}>
             <div>
-              <Undo />
+              <Undo action={router.push("/dashboard")} />
             </div>
-            <h2>CEO REPORT</h2>
+            {edit ? (
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
+              />
+            ) : (
+              <h2>{title}</h2>
+            )}
           </div>
           <div className={styles.editReportAction}>
-            <button>Cancel Edit</button>
-            <button>Save</button>
+            {edit ? (
+              <button
+                onClick={() => {
+                  window.location.reload();
+                }}>
+                Cancel Edit
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  setEdit(true);
+                }}>
+                Edit
+              </button>
+            )}
+
+            <button
+              onClick={() => {
+                setEdit(false);
+              }}>
+              Save
+            </button>
             <button>Submit</button>
           </div>
         </div>
@@ -41,13 +79,20 @@ const EditReport = () => {
           <EditPages />
           <div className={styles.editReportContent}>
             <CeoLayout number={1}>
-              <TableContent />
+              <TableContent edit={edit} />
             </CeoLayout>
             <CeoLayout number={2}>
               <CeoPageOne />
             </CeoLayout>
             <CeoLayout number={3}>
-              <CeoPageTwo />
+              <CeoPageTwo
+                edit={edit}
+                popupAction={() => {
+                  console.log("test");
+                  setPopup(true);
+                }}
+                popup={popup}
+              />
             </CeoLayout>
             <CeoLayout number={4}>
               <CeoPageThree />
@@ -78,6 +123,15 @@ const EditReport = () => {
             </CeoLayout>
             <CeoLayout number={13}>
               <CeoPageTwelve />
+            </CeoLayout>
+            <CeoLayout number={14}>
+              <CeoPageThirteen />
+            </CeoLayout>
+            <CeoLayout number={15}>
+              <CeoPageFourteen />
+            </CeoLayout>
+            <CeoLayout number={17}>
+              <CeoPageSixteen />
             </CeoLayout>
             <CeoLastPage />
           </div>

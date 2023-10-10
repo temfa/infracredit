@@ -4,15 +4,16 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import "chart.js/auto";
 import type { ChartData, ChartOptions } from "chart.js";
+import PopupStyle from "@/component/SmallComponents/popupStyle";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-const CeoPageTwo = () => {
+const CeoPageTwo = ({ edit, popupAction, popup }: { edit: boolean; popupAction: any; popup: boolean }) => {
   interface LineProps {
     options: ChartOptions<"doughnut">;
     data: ChartData<"doughnut">;
   }
 
-  const [chartData, setChartData] = useState<LineProps>({
+  const [chartDatas, setChartDatas] = useState<LineProps>({
     data: {
       datasets: [
         {
@@ -40,13 +41,13 @@ const CeoPageTwo = () => {
           position: "top",
           display: true,
         },
-        // title: {
-        //   display: true,
-        //   text: "Analysis of Guaranteed Transactions Since Inception of NGN87.6 Billion as at 28 February 2022",
-        //   color: "#70ad47",
-        //   font: { size: 20, weight: "bold", family: "Inter" },
-        //   fullSize: true,
-        // },
+        title: {
+          display: false,
+          text: "Analysis of Guaranteed Transactions Since Inception of NGN87.6 Billion as at 28 February 2022",
+          color: "#70ad47",
+          font: { size: 20, weight: "bold", family: "Inter" },
+          fullSize: true,
+        },
       },
     },
   });
@@ -70,8 +71,36 @@ const CeoPageTwo = () => {
           </p>
           <div className={styles.currentChart}>
             <h2>Analysis of Guaranteed Transactions Since Inception of NGN87.6 Billion as at 28 February 2022</h2>
-            <Doughnut data={chartData.data} options={chartData.options} />
+            <Doughnut data={chartDatas.data} options={chartDatas.options} onClick={edit ? popupAction : null} />
           </div>
+          {popup ? (
+            <PopupStyle>
+              <div className={styles.chartPopup}>
+                <div className={styles.chartHeader}>
+                  <h2>Pie Chart</h2>
+                  <p></p>
+                </div>
+                <div className={styles.chartBody}>
+                  {chartDatas?.data?.datasets[0].data?.map((item, index): React.ReactNode => {
+                    console.log(item);
+                    return (
+                      <div key={index}>
+                        <div className={styles.chartItem}>
+                          <div className={styles.chartLabel}>
+                            <p>{item}%</p>
+                          </div>
+                          <div className={styles.chartValue}>
+                            {/* @ts-ignore */}
+                            <p>{chartDatas?.data?.labels[index]}</p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            </PopupStyle>
+          ) : null}
         </div>
       </div>
       <div className={styles.keyStatistics}>
