@@ -88,6 +88,20 @@ const CeoPageTwo = ({ edit, popupAction, popup }: { edit: boolean; popupAction: 
                         <div className={styles.chartItem}>
                           <div className={styles.chartLabel}>
                             <p>{item}%</p>
+                            <div className={styles.chartInput}>
+                              <div className={styles.chartGroup}>
+                                <input
+                                  type="text"
+                                  // value={chartDatas?.data?.labels[index]}
+                                  onChange={(e) =>
+                                    setChartDatas({
+                                      ...chartDatas,
+                                      data: { ...chartDatas.data, datasets: [{ ...chartDatas.data.datasets[0], data: [...chartDatas.data.datasets[0].data] }] },
+                                    })
+                                  }
+                                />
+                              </div>
+                            </div>
                           </div>
                           <div className={styles.chartValue}>
                             {/* @ts-ignore */}
