@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-// import Topnav from "@/component/Layout/TopNav";
+import Topnav from "@/component/Layout/TopNav";
 import Undo from "@/component/Svgs/undo";
 import CeoLayout from "@/component/layouts/ceo-layout";
 import EditPages from "@/component/edit-pages";
@@ -21,7 +21,7 @@ import CeoPageTwelve from "@/component/ceo-report/page-twelve";
 import CeoLastPage from "@/component/ceo-report/last-page";
 import CeoPageThirteen from "@/component/ceo-report/page-thirteen";
 import CeoPageFourteen from "@/component/ceo-report/page-fourteen";
-import CeoPageSixteen from "@/component/ceo-report/page-fourteen copy";
+import CeoPageSixteen from "@/component/ceo-report/page-sixteen";
 import { useRouter } from "next/navigation";
 
 const EditReport = () => {
@@ -30,8 +30,9 @@ const EditReport = () => {
   const [title, setTitle] = useState("CEO REPORT");
   const [popup, setPopup] = useState(false);
   return (
-    <div className={popup === true ? styles.editReports : styles.editReport}>
-      <div className={styles.editReportBody}>
+    <div className={styles.editReport}>
+      <Topnav />
+      <div className={popup === true ? styles.editReportBodys : styles.editReportBody}>
         <div className={styles.editReportHead}>
           <div className={styles.editReportText}>
             <div>
@@ -86,14 +87,16 @@ const EditReport = () => {
               <TableContent edit={edit} />
             </CeoLayout>
             <CeoLayout number={2}>
-              <CeoPageOne />
+              <CeoPageOne edit={edit} />
             </CeoLayout>
             <CeoLayout number={3}>
               <CeoPageTwo
                 edit={edit}
                 popupAction={() => {
-                  console.log("test");
                   setPopup(true);
+                }}
+                popupClose={() => {
+                  setPopup(false);
                 }}
                 popup={popup}
               />

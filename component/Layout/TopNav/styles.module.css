@@ -1,19 +1,25 @@
 .topNamMain {
   display: flex;
-  padding: 0px 32px;
+  padding: 0px 32px 0px 0px;
   box-sizing: border-box;
   gap: 32px;
   border-bottom: 1px solid #cccfdc;
+  width: 100%;
 }
 
 .logoInfra {
   /* width: 80%; */
   border-right: 1px solid var(--infra-neutral-100, #cccfdc);
-  padding: 24px 39px 24px 0px;
+  padding: 24px 0px;
+  /* width: 14%; */
+  width: 200px;
+  box-sizing: border-box;
 }
 
 .logoInfra svg {
-  width: 100%;
+  width: fit-content;
+  margin: auto;
+  display: block;
 }
 
 .topbar {

@@ -3,10 +3,10 @@ import styles from "./styles.module.css";
 import Popup from "../popup";
 import Close from "@/component/Svgs/close";
 
-const PopupStyle = ({ children, action }: { children: any; action?: any }) => {
+const PopupStyle = ({ children, action, type }: { children: any; action?: any; type: boolean }) => {
   return (
     <Popup>
-      <div className={styles.popupStyle}>
+      <div className={type ? styles.popupStyle : styles.popupStyle2}>
         <div className={styles.popupHeader}>
           <div className={styles.close} onClick={action}>
             <h2>Close</h2>

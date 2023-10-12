@@ -5,6 +5,26 @@
   background: #fff;
   padding: 16px 16px 48px 48px;
   box-sizing: border-box;
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.popupStyle::-webkit-scrollbar {
+  display: none;
+}
+.popupStyle2 {
+  width: 53%;
+  max-width: 760px;
+  border-radius: 16px;
+  background: #fff;
+  padding: 16px 16px 48px 48px;
+  box-sizing: border-box;
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.popupStyle2::-webkit-scrollbar {
+  display: none;
 }
 
 .popupHeader {

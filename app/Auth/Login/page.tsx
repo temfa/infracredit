@@ -38,6 +38,7 @@ const Login = () => {
                 action={(e: any) => {
                   setUsername(e?.target?.value);
                 }}
+                value={username}
               />
               <Input
                 text="Password"
@@ -51,11 +52,12 @@ const Login = () => {
                     setActive(false);
                   }
                 }}
+                value={password}
               />
             </div>
             <div className={styles.inputsBtn}>
               <PrimaryButton
-                text="Sign in"
+                text="Log In"
                 active={active}
                 action={() => {
                   router.push("/admin/Dashboard");

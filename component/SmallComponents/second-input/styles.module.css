@@ -1,0 +1,28 @@
+.inputComp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputComp label {
+  color: var(--infra-neutral-700, #545764);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.inputComp input {
+  border-radius: 8px;
+  border: 1px solid var(--infra-neutral-50, #e0e3f0);
+  background: #fff;
+  width: 100%;
+  padding: 13px 0px 12px 12px;
+  box-sizing: border-box;
+  color: var(--infra-neutral-100, #cccfdc);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}

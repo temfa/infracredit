@@ -6,7 +6,7 @@ import PrimaryButton from "../SmallComponents/buttons/primarybutton";
 const AssignReport = ({ action }: any) => {
   const [active, setActive] = useState(false);
   return (
-    <PopupStyle action={action}>
+    <PopupStyle action={action} type={true}>
       <div className={styles.createUser}>
         <h2>Assign New Report</h2>
         <div className={styles.createGroup}>

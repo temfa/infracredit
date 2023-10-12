@@ -29,3 +29,23 @@
   font-weight: 700;
   line-height: normal;
 }
+
+.pageOne div input {
+  width: 70%;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+  color: #47b65c;
+}
+
+.pageOne div textarea {
+  color: #000;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 165.5%;
+  height: 250px;
+  border: none;
+}

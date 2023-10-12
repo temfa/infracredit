@@ -4,12 +4,17 @@
   width: 100%;
 }
 
-.editReports {
+.editReportBodys {
+  width: 100%;
+  background: var(--infra-neutral-25, #f4f7ff);
+  padding: 32px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  gap: 32px;
   height: 90vh;
   overflow: hidden;
+  position: relative;
 }
 
 .editReportBody {

@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
-const Input = ({ text, placeholder, types, action, value }: { text: string; placeholder: string; types: string; action: any; value: any }) => {
+
+const SecondInput = ({ text, placeholder, types, action, value }: { text: string; placeholder?: string; types: string; action: any; value: any }) => {
   return (
     <div className={styles.inputComp}>
       <label>{text}</label>
@@ -9,4 +10,4 @@ const Input = ({ text, placeholder, types, action, value }: { text: string; plac
   );
 };
 
-export default Input;
+export default SecondInput;

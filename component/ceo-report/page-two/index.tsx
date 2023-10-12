@@ -5,15 +5,17 @@ import { Doughnut } from "react-chartjs-2";
 import "chart.js/auto";
 import type { ChartData, ChartOptions } from "chart.js";
 import PopupStyle from "@/component/SmallComponents/popupStyle";
+import { pieValue } from "@/utils/pieValue";
+import SecondInput from "@/component/SmallComponents/second-input";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-const CeoPageTwo = ({ edit, popupAction, popup }: { edit: boolean; popupAction: any; popup: boolean }) => {
+const CeoPageTwo = ({ edit, popupAction, popup, popupClose }: { edit: boolean; popupAction: any; popup: boolean; popupClose: any }) => {
   interface LineProps {
     options: ChartOptions<"doughnut">;
     data: ChartData<"doughnut">;
   }
 
-  const [chartDatas, setChartDatas] = useState<LineProps>({
+  const [chartDatas, setChartDatas] = useState<any>({
     data: {
       datasets: [
         {
@@ -51,66 +53,74 @@ const CeoPageTwo = ({ edit, popupAction, popup }: { edit: boolean; popupAction: 
       },
     },
   });
+  const [data, setData] = useState({
+    title1: "Strategic Business Plan Update",
+    text1:
+      "The following are the updates on our corporate strategic workstreams which include: (i) Growth in Guarantee Portfolio and Execution of New Guarantee Products; (ii) Growth in Capital (Core Tier 1 Capital); (iii) Risk Sharing/Participation Arrangements; (iv) Our People Strategy; (v) Technical Assistance/Capacity Building Programme and (vi) Project Development Strategy;",
+    title2: "I. Current Guarantee Portfolio",
+    text2:
+      "Gross guarantee fee income is based on total guarantee guarantees issued since inception of N87.6 Billion through 28 February 2022. In FY2022, a total of N103.4 billionin guarantee transactions are projected to reach financial close, with N10.0 billion successfully closed as at 28 February 2022. As of date, the pipeline of active mandates comprises 34 transactions totaling N301.5 billion.",
+    title3: "II. Key Statistics on O&S Activity – Inception to Date",
+  });
   return (
     <div className={styles.pageTwo}>
       <div className={styles.strategicPlan}>
-        <h2>Strategic Business Plan Update</h2>
-        <p>
-          The following are the updates on our corporate strategic workstreams which include: (i) Growth in Guarantee Portfolio and Execution of New Guarantee Products; (ii) Growth
-          in Capital (Core Tier 1 Capital); (iii) Risk Sharing/Participation Arrangements; (iv) Our People Strategy; (v) Technical Assistance/Capacity Building Programme and (vi)
-          Project Development Strategy;
-        </p>
+        {edit ? <input type="text" value={data?.title1} /> : <h2>{data?.title1}</h2>}
+        {edit ? <input type="text" value={data?.text1} /> : <p>{data?.text1}</p>}
       </div>
       <div className={styles.currentPort}>
-        <h2>I. Current Guarantee Portfolio</h2>
+        {edit ? <input type="text" value={data?.title2} /> : <h2>{data?.title2}</h2>}
         <div>
-          <p>
-            Gross guarantee fee income is based on total guarantee guarantees issued since inception of N87.6 Billion through 28 February 2022. In FY2022, a total of N103.4 billion
-            in guarantee transactions are projected to reach financial close, with N10.0 billion successfully closed as at 28 February 2022. As of date, the pipeline of active
-            mandates comprises 34 transactions totaling N301.5 billion.
-          </p>
+          {edit ? <input type="text" value={data?.text2} /> : <h2>{data?.text2}</h2>}
           <div className={styles.currentChart}>
             <h2>Analysis of Guaranteed Transactions Since Inception of NGN87.6 Billion as at 28 February 2022</h2>
             <Doughnut data={chartDatas.data} options={chartDatas.options} onClick={edit ? popupAction : null} />
           </div>
           {popup ? (
-            <PopupStyle>
+            <PopupStyle type={false} action={popupClose}>
               <div className={styles.chartPopup}>
                 <div className={styles.chartHeader}>
                   <h2>Pie Chart</h2>
-                  <p></p>
+                  <p>{chartDatas?.options?.plugins?.title?.text}</p>
                 </div>
                 <div className={styles.chartBody}>
-                  {chartDatas?.data?.datasets[0].data?.map((item, index) => {
-                    console.log(item);
+                  {chartDatas?.data?.datasets[0].data?.map((item: any, index: any) => {
                     return (
-                      <div key={index}>
+                      <div key={index} className={styles.chartSingle}>
+                        <p>{chartDatas?.data?.labels[index]}</p>
                         <div className={styles.chartItem}>
-                          <div className={styles.chartLabel}>
-                            <p>{item}%</p>
-                            <div className={styles.chartInput}>
-                              <div className={styles.chartGroup}>
-                                <input
-                                  type="text"
-                                  // value={chartDatas?.data?.labels[index]}
-                                  // onChange={(e) =>
-                                  //   setChartDatas({
-                                  //     ...chartDatas,
-                                  //     data: { ...chartDatas.data, datasets: [{ ...chartDatas.data.datasets[0], data: [...chartDatas.data.datasets[0].data] }] },
-                                  //   })
-                                  // }
-                                />
-                              </div>
-                            </div>
+                          <div className={styles.chartGroup}>
+                            <SecondInput
+                              text="Value"
+                              types="text"
+                              action={(e: any) => {
+                                const updatedData = [...chartDatas.data.labels];
+                                updatedData[index] = e.target.value;
+                                setChartDatas({ ...chartDatas, data: { ...chartDatas.data, labels: updatedData } });
+                              }}
+                              value={pieValue(chartDatas?.data?.labels, index)}
+                            />
                           </div>
-                          <div className={styles.chartValue}>
-                            {/* @ts-ignore */}
-                            <p>{chartDatas?.data?.labels[index]}</p>
+                          <div className={styles.chartGroup}>
+                            <SecondInput
+                              text="Percentage (%)"
+                              types="text"
+                              action={(e: any) => {
+                                const updatedData = [...chartDatas.data.datasets[0].data];
+                                updatedData[index] = e.target.value;
+                                setChartDatas({ ...chartDatas, data: { ...chartDatas.data, datasets: [{ ...chartDatas.data.datasets[0], data: updatedData }] } });
+                              }}
+                              value={item}
+                            />
                           </div>
                         </div>
                       </div>
                     );
                   })}
+                </div>
+                <div className={styles.chartButtons}>
+                  <button>Cancel</button>
+                  <button>Save</button>
                 </div>
               </div>
             </PopupStyle>
@@ -119,7 +129,7 @@ const CeoPageTwo = ({ edit, popupAction, popup }: { edit: boolean; popupAction: 
       </div>
       <div className={styles.keyStatistics}>
         <div>
-          <h2>II. Key Statistics on O&S Activity – Inception to Date</h2>
+          <h2>{data?.title3}</h2>
           <div className={styles.smallLine}></div>
         </div>
         <div className={styles.keyTable}>
