@@ -25,7 +25,13 @@ const Sidenav = () => {
           return item !== null ? (
             <div className={pathName === item.link ? `${styles.sideIcon} ${styles.active}` : styles.sideIcon} key={index}>
               <span className={styles.icon}>{item.svg}</span>
-              <Link href={item.link}>{item.title}</Link>
+              <p
+                onClick={() => {
+                  router.push(item.link);
+                }}>
+                {item.title}
+              </p>
+              {/* <Link href={item.link}>{item.title}</Link> */}
             </div>
           ) : null;
         })}
