@@ -7,14 +7,16 @@ import DashboardLayout from "@/component/layouts/dashboard-layout";
 
 const Deleted = () => {
   return (
-    <div className={styles.draftContainer}>
-      <Title text="Deleted Reports" />
-      <div className={styles.draftWrapper}>
-        {deleted?.map((item, index) => {
-          return <SingleReportCard title={item.title} text={item.action} number={item.number} key={index} type={false} />;
-        })}
+    <DashboardLayout>
+      <div className={styles.draftContainer}>
+        <Title text="Deleted Reports" />
+        <div className={styles.draftWrapper}>
+          {deleted?.map((item, index) => {
+            return <SingleReportCard title={item.title} text={item.action} number={item.number} key={index} type={false} />;
+          })}
+        </div>
       </div>
-    </div>
+    </DashboardLayout>
   );
 };
 
