@@ -17,17 +17,22 @@ const Layout = ({ children }: { children: any }) => {
   // const router = useRouter();
   const pathname = usePathname();
   console.log(pathname.split("/")[1]);
-  return (
-    <AnimatePresence>
-      <motion.div
-        key={pathname}
-        variants={variants} // Pass the variant object into Framer Motion
-        initial="hidden" // Set the initial state to variants.hidden
-        animate="enter" // Animated state to variants.enter
-        exit="exit" // Exit state (used later) to variants.exit
-        transition={{ type: "linear" }} // Set the transition to linear
-        className="">
-        {/* <div className={styles.layoutContainer}>
+  return <div>{children}</div>;
+};
+
+export default Layout;
+
+// <AnimatePresence>
+//   <motion.div
+//     key={pathname}
+//     variants={variants} // Pass the variant object into Framer Motion
+//     initial="hidden" // Set the initial state to variants.hidden
+//     animate="enter" // Animated state to variants.enter
+//     exit="exit" // Exit state (used later) to variants.exit
+//     transition={{ type: "linear" }} // Set the transition to linear
+//     className="">
+{
+  /* <div className={styles.layoutContainer}>
           {pathname.split("/")[1] === "admin" ? (
             <Topnav
               action={() => {
@@ -49,15 +54,16 @@ const Layout = ({ children }: { children: any }) => {
                 }}
               />
             ) : null}
-            {pathname.split("/")[1] === "admin" ? <Sidenav /> : null} */}
-        {children}
-        {/* <div className={pathname.split("/")[1] === "admin" ? styles.layoutCont : ""}>
-              </div> */}
-        {/* </div>
-        </div> */}
-      </motion.div>
-    </AnimatePresence>
-  );
-};
+            {pathname.split("/")[1] === "admin" ? <Sidenav /> : null} */
+}
 
-export default Layout;
+{
+  /* <div className={pathname.split("/")[1] === "admin" ? styles.layoutCont : ""}>
+              </div> */
+}
+{
+  /* </div>
+        </div> */
+}
+//   </motion.div>
+// </AnimatePresence>

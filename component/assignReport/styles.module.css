@@ -34,8 +34,8 @@
   box-sizing: border-box;
   border-radius: 8px;
   border: 1px solid var(--infra-neutral-50, #e0e3f0);
-  background: #fff;
-  color: var(--infra-neutral-100, #cccfdc);
+  background-color: #fff;
+  /* color: var(--infra-neutral-100, #cccfdc) !important; */
   font-size: 12px;
   font-style: normal;
   font-weight: 500;
@@ -46,6 +46,10 @@
 .createGroup select:focus {
   outline: none;
 }
+
+/* .createGroup select {
+  color: #000;
+} */
 
 .createCont {
   display: flex;

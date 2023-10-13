@@ -9,10 +9,10 @@ const AssignReport = ({ action }: any) => {
     <PopupStyle action={action} type={true}>
       <div className={styles.createUser}>
         <h2>Assign New Report</h2>
-        <div className={styles.createGroup}>
+        {/* <div className={styles.createGroup}>
           <label>Title</label>
           <input type="text" placeholder="Report" />
-        </div>
+        </div> */}
         <div className={styles.createGroup}>
           <label>Select Report</label>
           <select>
@@ -41,10 +41,6 @@ const AssignReport = ({ action }: any) => {
         </div>
         <div className={styles.createGroup}>
           <label>User</label>
-          <input type="text" placeholder="Ezekiel@gmail.com" />
-        </div>
-        <div className={styles.createGroup}>
-          <label>Supervisor</label>
           <input
             type="text"
             placeholder="Ezekiel@gmail.com"
@@ -56,6 +52,10 @@ const AssignReport = ({ action }: any) => {
               }
             }}
           />
+        </div>
+        <div className={styles.createGroup}>
+          <label>Comment</label>
+          <input type="text" placeholder="Comment..." />
         </div>
         <PrimaryButton
           text="Assign Report"

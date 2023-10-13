@@ -97,67 +97,7 @@ export const deleted = [
     action: "Review",
   },
   {
-    title: "Weekly Report Template",
-    number: "12",
-    action: "Review",
-  },
-  {
-    title: "Annual Report Template",
-    number: "12",
-    action: "Review",
-  },
-  {
-    title: "Quarterly Report Template",
-    number: "12",
-    action: "Review",
-  },
-  {
     title: "Monthly Report Template",
-    number: "12",
-    action: "Review",
-  },
-  {
-    title: "Weekly Report Template",
-    number: "12",
-    action: "Review",
-  },
-  {
-    title: "Annual Report Template",
-    number: "12",
-    action: "Review",
-  },
-  {
-    title: "Quarterly Report Template",
-    number: "12",
-    action: "Review",
-  },
-  {
-    title: "Monthly Report Template",
-    number: "12",
-    action: "Review",
-  },
-  {
-    title: "Weekly Report Template",
-    number: "12",
-    action: "Review",
-  },
-  {
-    title: "Annual Report Template",
-    number: "12",
-    action: "Review",
-  },
-  {
-    title: "Quarterly Report Template",
-    number: "12",
-    action: "Review",
-  },
-  {
-    title: "Monthly Report Template",
-    number: "12",
-    action: "Review",
-  },
-  {
-    title: "Weekly Report Template",
     number: "12",
     action: "Review",
   },

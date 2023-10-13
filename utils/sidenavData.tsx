@@ -14,16 +14,16 @@ const SidenavData = ({ color, color2, color3, color4, color5 }: { color: any; co
       title: "Dashboard",
       link: "/admin/Dashboard",
     },
-    {
-      svg: <Draftssvg color={color2} />,
-      title: "Drafts",
-      link: "/admin/Draft",
-    },
-    {
-      svg: <Deletedsvg color={color3} />,
-      title: "Deleted",
-      link: "/admin/Deleted",
-    },
+    // {
+    //   svg: <Draftssvg color={color2} />,
+    //   title: "Drafts",
+    //   link: "/admin/Draft",
+    // },
+    // {
+    //   svg: <Deletedsvg color={color3} />,
+    //   title: "Deleted",
+    //   link: "/admin/Deleted",
+    // },
     {
       svg: <Taskssvg color={color4} />,
       title: "Tasks",

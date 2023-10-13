@@ -9,8 +9,8 @@ import Collaborators from "@/component/Svgs/collaborators";
 const Cards = () => {
   return (
     <div className={styles.cardsContainer}>
-      <SingleCards title="Forms Created" number="344" logo={<FormCreated />} />
-      <SingleCards title="Draft Forms " number="243" logo={<DraftForm />} />
+      <SingleCards title="Reports Created" number="344" logo={<FormCreated />} />
+      <SingleCards title="Reports Drafted" number="243" logo={<DraftForm />} />
       <SingleCards title="Reports Generated" number="123" logo={<Reports />} />
       <SingleCards title="Collaborators" number="344" logo={<Collaborators />} />
     </div>

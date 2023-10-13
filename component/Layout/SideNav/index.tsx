@@ -31,7 +31,7 @@ const Sidenav = () => {
         })}
       </div>
       <div className={styles.sidebarOther}>
-        <p>Other</p>
+        {/* <p>Other</p> */}
         <div className={styles.sideIcon}>
           <span>
             <Logout />
