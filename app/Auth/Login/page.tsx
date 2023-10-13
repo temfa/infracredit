@@ -18,61 +18,58 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   return (
-    <div>
-      <ToastContainer />
-      <div className={styles.pageCov}>
-        <div className={styles.secionA}>
-          <div>
-            <Infrawhitelogo />
-            <h2>We provide you with the best platform to Create and Edit Reports of your choice. </h2>
-          </div>
-          <Image src={Macbook} alt="macbook" />
+    <div className={styles.pageCov}>
+      <div className={styles.secionA}>
+        <div>
+          <Infrawhitelogo />
+          <h2>We provide you with the best platform to Create and Edit Reports of your choice. </h2>
         </div>
-        <div className={styles.secionB}>
-          <div className={styles.sectionBWrapper}>
-            <div className={styles.secionLogo}>
-              <Ifracoloredlogo />
+        <Image src={Macbook} alt="macbook" />
+      </div>
+      <div className={styles.secionB}>
+        <div className={styles.sectionBWrapper}>
+          <div className={styles.secionLogo}>
+            <Ifracoloredlogo />
+          </div>
+          <div className={styles.sectionBGroup}>
+            <div className={styles.inputs}>
+              <Input
+                text="Email Address"
+                placeholder="Enter Email Address"
+                types="email"
+                action={(e: any) => {
+                  setUsername(e?.target?.value);
+                }}
+                value={username}
+              />
+              <Input
+                text="Password"
+                placeholder="Enter Password"
+                types="Password"
+                action={(e: any) => {
+                  setPassword(e?.target?.value);
+                  if (e?.target?.value.length > 0) {
+                    setActive(true);
+                  } else {
+                    setActive(false);
+                  }
+                }}
+                value={password}
+              />
             </div>
-            <div className={styles.sectionBGroup}>
-              <div className={styles.inputs}>
-                <Input
-                  text="Email Address"
-                  placeholder="Enter Email Address"
-                  types="email"
-                  action={(e: any) => {
-                    setUsername(e?.target?.value);
-                  }}
-                  value={username}
-                />
-                <Input
-                  text="Password"
-                  placeholder="Enter Password"
-                  types="Password"
-                  action={(e: any) => {
-                    setPassword(e?.target?.value);
-                    if (e?.target?.value.length > 0) {
-                      setActive(true);
-                    } else {
-                      setActive(false);
-                    }
-                  }}
-                  value={password}
-                />
-              </div>
-              <div className={styles.inputsBtn}>
-                <PrimaryButton
-                  text="Log In"
-                  active={active}
-                  action={() => {
-                    const split = username.split("@");
-                    if (split[1] === "infracredit.ng") {
-                      router.push("/admin/Dashboard");
-                    } else {
-                      toast.error("Email must be an Infracredit Email");
-                    }
-                  }}
-                />
-              </div>
+            <div className={styles.inputsBtn}>
+              <PrimaryButton
+                text="Log In"
+                active={active}
+                action={() => {
+                  const split = username.split("@");
+                  if (split[1] === "infracredit.ng") {
+                    router.push("/admin/Dashboard");
+                  } else {
+                    toast.error("Email must be an Infracredit email");
+                  }
+                }}
+              />
             </div>
           </div>
         </div>

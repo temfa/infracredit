@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Topnav from "./TopNav";
 import UserPopup from "../SmallComponents/userPopup";
 import Sidenav from "./SideNav";
+import { ToastContainer } from "react-toastify";
 
 const Layout = ({ children }: { children: any }) => {
   const [overlay, setoverlay] = useState(false);
@@ -17,7 +18,12 @@ const Layout = ({ children }: { children: any }) => {
   // const router = useRouter();
   const pathname = usePathname();
   console.log(pathname.split("/")[1]);
-  return <div>{children}</div>;
+  return (
+    <div>
+      <ToastContainer />
+      {children}
+    </div>
+  );
 };
 
 export default Layout;

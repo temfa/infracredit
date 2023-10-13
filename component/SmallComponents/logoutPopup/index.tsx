@@ -11,7 +11,7 @@ const LogoutPopup = ({ action1, action2 }: { action1: any; action2: any }) => {
           <div>
             <CloseCircle />
           </div>
-          <h2>Are you sure, you want to Log-Out</h2>
+          <h2>Are you sure, you want to Log Out</h2>
         </div>
         <div className={styles.logoutBody}>
           <button onClick={action1}>Cancel</button>
