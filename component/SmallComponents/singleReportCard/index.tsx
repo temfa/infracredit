@@ -11,6 +11,7 @@ const SingleReportCard = ({ title, number, text, type }: { title: string; number
     <div className={type ? styles.singleReportCardConts : styles.singleReportCardCont}>
       <Image src={Report} alt="Report" width={285} />
       <h2>{title}</h2>
+      <h3>Work on pages 1,2,3 , should be ready by Monday</h3>
       <div>
         <p>
           {number} <span>users</span>

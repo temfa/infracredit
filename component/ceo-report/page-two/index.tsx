@@ -53,6 +53,7 @@ const CeoPageTwo = ({ edit, popupAction, popup, popupClose }: { edit: boolean; p
       },
     },
   });
+
   const [data, setData] = useState({
     title1: "Strategic Business Plan Update",
     text1:
@@ -62,16 +63,190 @@ const CeoPageTwo = ({ edit, popupAction, popup, popupClose }: { edit: boolean; p
       "Gross guarantee fee income is based on total guarantee guarantees issued since inception of N87.6 Billion through 28 February 2022. In FY2022, a total of N103.4 billionin guarantee transactions are projected to reach financial close, with N10.0 billion successfully closed as at 28 February 2022. As of date, the pipeline of active mandates comprises 34 transactions totaling N301.5 billion.",
     title3: "II. Key Statistics on O&S Activity – Inception to Date",
   });
+
+  type SampleBody = {
+    title: string;
+    text1: string;
+    text2: string;
+    text3: string;
+  };
+
+  interface Sample {
+    header: {
+      header1: string;
+      header2: string;
+      header3: string;
+      header4: string;
+    };
+    body: SampleBody[];
+  }
+
+  const [tableData, setTableData] = useState<Sample[]>([
+    {
+      header: {
+        header1: "SUMMARY OF KEY ACTIVITY",
+        header2: "2017-20",
+        header3: "2021",
+        header4: "2022",
+      },
+      body: [
+        {
+          title: "New Guarantees Executed",
+          text1: "4",
+          text2: "4",
+          text3: "4",
+        },
+        {
+          title: "Size of New Guarantees Executed",
+          text1: "N43.5 billion",
+          text2: "N43.5 billion",
+          text3: "N10.0 billion",
+        },
+        {
+          title: "",
+          text1: "",
+          text2: "",
+          text3: "",
+        },
+        {
+          title: "New Mandates Signed (excl. Follow-On Mandates)",
+          text1: "24",
+          text2: "22",
+          text3: "N/A",
+        },
+        {
+          title: "Size of New Mandates Signed",
+          text1: "N293.2 billion",
+          text2: "N293.2 billion",
+          text3: "N/A",
+        },
+        {
+          title: "Size of Follow-On Mandates",
+          text1: "N3.6 billion",
+          text2: "N/A",
+          text3: "N/A",
+        },
+        {
+          title: "",
+          text1: "",
+          text2: "",
+          text3: "",
+        },
+        {
+          title: "New Business Committee (NBC) Approvals",
+          text1: "39",
+          text2: "25",
+          text3: "N/A",
+        },
+        {
+          title: "SUMMARY OF KEY ACTIVITY",
+          text1: "4",
+          text2: "4",
+          text3: "4",
+        },
+        {
+          title: "",
+          text1: "",
+          text2: "",
+          text3: "",
+        },
+        {
+          title: "",
+          text1: "",
+          text2: "",
+          text3: "",
+        },
+      ],
+    },
+    {
+      header: {
+        header1: "PERIOD ENDING STATISTICS",
+        header2: "",
+        header3: "",
+        header4: "",
+      },
+      body: [
+        {
+          title: "Size of Guaranteed Transactions Since Inception",
+          text1: "N43.5 billion",
+          text2: "N77.6 billion",
+          text3: "N87.6 billion",
+        },
+        {
+          title: "Size of Mandated Deal Pipeline (period-end)",
+          text1: "N203.5 billion",
+          text2: "N311.5 billion",
+          text3: "N301.5 billion",
+        },
+        {
+          title: "Advanced Mandates (to close in <6 months",
+          text1: "N70.6 billion",
+          text2: "N63.6 billion",
+          text3: "N53.6 billion",
+        },
+        {
+          title: "Longer Mandates (to close in >6 months)",
+          text1: "N93.0 billion",
+          text2: "N191.4 billion",
+          text3: "N191.4 billion",
+        },
+        {
+          title: "Contingent Refis (long-lead Greenfield)",
+          text1: "N39.9 billion",
+          text2: "N56.5 billion",
+          text3: "N56.5 billion",
+        },
+      ],
+    },
+  ]);
   return (
     <div className={styles.pageTwo}>
       <div className={styles.strategicPlan}>
-        {edit ? <input type="text" value={data?.title1} /> : <h2>{data?.title1}</h2>}
-        {edit ? <input type="text" value={data?.text1} /> : <p>{data?.text1}</p>}
+        {edit ? (
+          <input
+            type="text"
+            value={data?.title1}
+            onChange={(e) => {
+              setData({ ...data, title1: e.target.value });
+            }}
+          />
+        ) : (
+          <h2>{data?.title1}</h2>
+        )}
+        {edit ? (
+          <textarea
+            value={data?.text1}
+            onChange={(e) => {
+              setData({ ...data, text1: e.target.value });
+            }}
+          />
+        ) : (
+          <p>{data?.text1}</p>
+        )}
       </div>
       <div className={styles.currentPort}>
-        {edit ? <input type="text" value={data?.title2} /> : <h2>{data?.title2}</h2>}
+        {edit ? (
+          <input
+            type="text"
+            value={data?.title2}
+            onChange={(e) => {
+              setData({ ...data, title2: e.target.value });
+            }}
+          />
+        ) : (
+          <h2>{data?.title2}</h2>
+        )}
         <div>
-          {edit ? <input type="text" value={data?.text2} /> : <h2>{data?.text2}</h2>}
+          {edit ? (
+            <textarea
+              value={data?.text2}
+              onChange={(e) => {
+                setData({ ...data, text2: e.target.value });
+              }}
+            />
+          ) : (
+            <p>{data?.text2}</p>
+          )}
           <div className={styles.currentChart}>
             <h2>Analysis of Guaranteed Transactions Since Inception of NGN87.6 Billion as at 28 February 2022</h2>
             <Doughnut data={chartDatas.data} options={chartDatas.options} onClick={edit ? popupAction : null} />
@@ -119,8 +294,8 @@ const CeoPageTwo = ({ edit, popupAction, popup, popupClose }: { edit: boolean; p
                   })}
                 </div>
                 <div className={styles.chartButtons}>
-                  <button>Cancel</button>
-                  <button>Save</button>
+                  <button onClick={popupClose}>Cancel</button>
+                  <button onClick={popupClose}>Save</button>
                 </div>
               </div>
             </PopupStyle>
@@ -129,86 +304,130 @@ const CeoPageTwo = ({ edit, popupAction, popup, popupClose }: { edit: boolean; p
       </div>
       <div className={styles.keyStatistics}>
         <div>
-          <h2>{data?.title3}</h2>
+          {edit ? (
+            <input
+              type="text"
+              value={data?.title3}
+              onChange={(e) => {
+                setData({ ...data, title3: e.target.value });
+              }}
+              className={styles.keyStatisticsInput}
+            />
+          ) : (
+            <h2>{data?.title3}</h2>
+          )}
+
           <div className={styles.smallLine}></div>
         </div>
         <div className={styles.keyTable}>
-          <div className={styles.keyTableHeader}>
-            <p>SUMMARY OF KEY ACTIVITY</p>
-            <p>2017-20</p>
-            <p>2021</p>
-            <p>
-              2022
-              <br />
-              <span>(2 months) </span>
-            </p>
-          </div>
-          <div className={styles.keyTableSingle}>
-            <p>New Guarantees Executed</p>
-            <p>4</p>
-            <p>4</p>
-            <p>4</p>
-          </div>
-          <div className={styles.keyTableSingle}>
-            <p>Size of New Guarantees Executed</p>
-            <p>N43.5 billion</p>
-            <p>N43.5 billion</p>
-            <p>N10.0 billion</p>
-          </div>
-          <div className={styles.keyTableSingle}></div>
-          <div className={styles.keyTableSingle}>
-            <p>New Mandates Signed (excl. Follow-On Mandates)</p>
-            <p>24</p>
-            <p>22</p>
-            <p>N/A</p>
-          </div>
-          <div className={styles.keyTableSingle}>
-            <p>Size of New Mandates Signed</p>
-            <p>N293.2 billion</p>
-            <p>N284.5 billion</p>
-            <p>N/A</p>
-          </div>
-          <div className={styles.keyTableSingle}>
-            <p>Size of Follow-On Mandates</p>
-            <p>N3.6 billion</p>
-            <p>N/A</p>
-            <p>N/A</p>
-          </div>
-          <div className={styles.keyTableSingle}></div>
-          <div className={styles.keyTableSingle}></div>
-          <div className={styles.keyTableHeader}>
-            <p>PERIOD ENDING STATISTICS</p>
-          </div>
-          <div className={styles.keyTableSingle}>
-            <p>Size of Guaranteed Transactions Since Inception</p>
-            <p>N43.5 billion</p>
-            <p>N77.6 billion</p>
-            <p>N87.6 billion</p>
-          </div>
-          <div className={styles.keyTableSingle}>
-            <p>Size of Mandated Deal Pipeline (period-end)</p>
-            <p>N203.5 billion</p>
-            <p>N311.5 billion</p>
-            <p>N301.5 billion</p>
-          </div>
-          <div className={styles.keyTableSingle}>
-            <p>Advanced Mandates (to close in &lt; 6 months)</p>
-            <p>N70.6 billion</p>
-            <p>N63.6 billion</p>
-            <p>N53.6 billion</p>
-          </div>
-          <div className={styles.keyTableSingle}>
-            <p>Longer Mandates (to close in &gt; 6 months)</p>
-            <p>N93.0 billion</p>
-            <p>N191.4 billion</p>
-            <p>N191.4 billion</p>
-          </div>
-          <div className={styles.keyTableSingle}>
-            <p>Contingent Refis (long-lead Greenfield)</p>
-            <p>N39.9 billion</p>
-            <p>N56.5 billion</p>
-            <p>N56.5 billion</p>
-          </div>
+          {tableData?.map((item, index) => {
+            return (
+              <div key={index}>
+                <div className={styles.keyTableHeader}>
+                  {edit ? (
+                    <>
+                      <input
+                        type="text"
+                        value={item.header.header1}
+                        onChange={(e) => {
+                          const updatedData = [...tableData];
+                          updatedData[index].header.header1 = e.target.value;
+                          setTableData(updatedData);
+                        }}
+                      />
+                      <input
+                        type="text"
+                        value={item.header.header2}
+                        onChange={(e) => {
+                          const updatedData = [...tableData];
+                          updatedData[index].header.header2 = e.target.value;
+                          setTableData(updatedData);
+                        }}
+                      />
+                      <input
+                        type="text"
+                        value={item.header.header3}
+                        onChange={(e) => {
+                          const updatedData = [...tableData];
+                          updatedData[index].header.header3 = e.target.value;
+                          setTableData(updatedData);
+                        }}
+                      />
+                      <input
+                        type="text"
+                        value={item.header.header4}
+                        onChange={(e) => {
+                          const updatedData = [...tableData];
+                          updatedData[index].header.header4 = e.target.value;
+                          setTableData(updatedData);
+                        }}
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <p>{item.header.header1}</p>
+                      <p>{item.header.header2}</p>
+                      <p>{item.header.header3}</p>
+                      <p>{item.header.header4}</p>
+                    </>
+                  )}
+                </div>
+                {item.body?.map((items, index2) => {
+                  return (
+                    <div className={styles.keyTableSingle} key={index2}>
+                      {edit ? (
+                        <>
+                          <input
+                            type="text"
+                            value={items.title}
+                            onChange={(e) => {
+                              const updatedData = [...tableData];
+                              updatedData[index].body[index2].title = e.target.value;
+                              setTableData(updatedData);
+                            }}
+                          />
+                          <input
+                            type="text"
+                            value={items.text1}
+                            onChange={(e) => {
+                              const updatedData = [...tableData];
+                              updatedData[index].body[index2].text1 = e.target.value;
+                              setTableData(updatedData);
+                            }}
+                          />
+                          <input
+                            type="text"
+                            value={items.text2}
+                            onChange={(e) => {
+                              const updatedData = [...tableData];
+                              updatedData[index].body[index2].text2 = e.target.value;
+                              setTableData(updatedData);
+                            }}
+                          />
+                          <input
+                            type="text"
+                            value={items.text3}
+                            onChange={(e) => {
+                              const updatedData = [...tableData];
+                              updatedData[index].body[index2].text3 = e.target.value;
+                              setTableData(updatedData);
+                            }}
+                          />
+                        </>
+                      ) : (
+                        <>
+                          <p>{items.title}</p>
+                          <p>{items.text1}</p>
+                          <p>{items.text2}</p>
+                          <p>{items.text3}</p>
+                        </>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

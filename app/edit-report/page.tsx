@@ -23,6 +23,8 @@ import CeoPageThirteen from "@/component/ceo-report/page-thirteen";
 import CeoPageFourteen from "@/component/ceo-report/page-fourteen";
 import CeoPageSixteen from "@/component/ceo-report/page-sixteen";
 import { useRouter } from "next/navigation";
+import ReportDescription from "@/component/report-description";
+import Comments from "@/component/comments";
 
 const EditReport = () => {
   const router = useRouter();
@@ -83,13 +85,13 @@ const EditReport = () => {
         <div className={styles.editReportContainer}>
           <EditPages />
           <div className={styles.editReportContent}>
-            <CeoLayout number={1}>
+            <CeoLayout edit={edit} number={1}>
               <TableContent edit={edit} />
             </CeoLayout>
-            <CeoLayout number={2}>
+            <CeoLayout edit={edit} number={2}>
               <CeoPageOne edit={edit} />
             </CeoLayout>
-            <CeoLayout number={3}>
+            <CeoLayout edit={edit} number={3}>
               <CeoPageTwo
                 edit={edit}
                 popupAction={() => {
@@ -101,48 +103,51 @@ const EditReport = () => {
                 popup={popup}
               />
             </CeoLayout>
-            <CeoLayout number={4}>
+            <CeoLayout edit={edit} number={4}>
               <CeoPageThree />
             </CeoLayout>
-            <CeoLayout number={5}>
+            <CeoLayout edit={edit} number={5}>
               <CeoPageFour />
             </CeoLayout>
-            <CeoLayout number={6}>
+            <CeoLayout edit={edit} number={6}>
               <CeoPageFive />
             </CeoLayout>
-            <CeoLayout number={7}>
+            <CeoLayout edit={edit} number={7}>
               <CeoPageSix />
             </CeoLayout>
-            <CeoLayout number={8}>
+            <CeoLayout edit={edit} number={8}>
               <CeoPageSeven />
             </CeoLayout>
-            <CeoLayout number={9}>
+            <CeoLayout edit={edit} number={9}>
               <CeoPageEight />
             </CeoLayout>
-            <CeoLayout number={10}>
+            <CeoLayout edit={edit} number={10}>
               <CeoPageNine />
             </CeoLayout>
-            <CeoLayout number={11}>
+            <CeoLayout edit={edit} number={11}>
               <CeoPageTen />
             </CeoLayout>
-            <CeoLayout number={12}>
+            <CeoLayout edit={edit} number={12}>
               <CeoPageEleven />
             </CeoLayout>
-            <CeoLayout number={13}>
+            <CeoLayout edit={edit} number={13}>
               <CeoPageTwelve />
             </CeoLayout>
-            <CeoLayout number={14}>
+            <CeoLayout edit={edit} number={14}>
               <CeoPageThirteen />
             </CeoLayout>
-            <CeoLayout number={15}>
+            <CeoLayout edit={edit} number={15}>
               <CeoPageFourteen />
             </CeoLayout>
-            <CeoLayout number={17}>
+            <CeoLayout edit={edit} number={17}>
               <CeoPageSixteen />
             </CeoLayout>
             <CeoLastPage />
           </div>
-          <div className={styles.editReportDiscuss}></div>
+          <div className={styles.editReportDiscuss}>
+            <ReportDescription />
+            <Comments />
+          </div>
         </div>
       </div>
     </div>

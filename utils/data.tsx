@@ -162,3 +162,46 @@ export const deleted = [
     action: "Review",
   },
 ];
+
+export const comment = [
+  {
+    comment: "This is a comment, This is a comment, This is a comment",
+    commenter: "Kelvin Boluwatife",
+    time: "Today",
+  },
+  {
+    comment: "This is a comment, This is a comment, This is a comment",
+    commenter: "Kelvin Boluwatife",
+    time: "Yesterday",
+  },
+  {
+    comment: "This is a comment, This is a comment, This is a comment",
+    commenter: "Kelvin Boluwatife",
+    time: "Yesterday",
+  },
+  {
+    comment: "This is a comment, This is a comment, This is a comment",
+    commenter: "Kelvin Boluwatife",
+    time: "12 may 2023",
+  },
+  {
+    comment: "This is a comment, This is a comment, This is a comment",
+    commenter: "Kelvin Boluwatife",
+    time: "12 may 2023",
+  },
+  {
+    comment: "This is a comment, This is a comment, This is a comment",
+    commenter: "Kelvin Boluwatife",
+    time: "12 may 2023",
+  },
+  {
+    comment: "This is a comment, This is a comment, This is a comment",
+    commenter: "Kelvin Boluwatife",
+    time: "12 may 2023",
+  },
+  {
+    comment: "This is a comment, This is a comment, This is a comment",
+    commenter: "Kelvin Boluwatife",
+    time: "12 may 2023",
+  },
+];

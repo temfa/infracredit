@@ -32,6 +32,15 @@
   line-height: normal;
 }
 
+.singleReportCardCont > h3,
+.singleReportCardConts > h3 {
+  color: #696969;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
 .singleReportCardCont div,
 .singleReportCardConts div {
   display: flex;

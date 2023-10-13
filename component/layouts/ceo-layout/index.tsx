@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./styles.module.css";
 import Ifracoloredlogo from "@/component/Svgs/ifracoloredlogo";
 
-const CeoLayout = ({ children, number }: { children: any; number: number }) => {
+const CeoLayout = ({ children, number, edit }: { children: any; number: number; edit: boolean }) => {
+  const [title, setTitle] = useState("InfraCredit CEO Report March 2022");
+  const [text, setText] = useState("Source: CBN, Vetiva Research, Rencap FSDH Research");
   return (
     <div className={styles.ceoLayout}>
       <div className={styles.ceoHeader}>
@@ -12,9 +14,29 @@ const CeoLayout = ({ children, number }: { children: any; number: number }) => {
       <div className={styles.ceoLayoutFooter}>
         <div className={styles.ceoLayoutText}>
           <div>
-            <h2>InfraCredit CEO Report March 2022</h2>
+            {edit ? (
+              <input
+                type="text"
+                value={title}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
+              />
+            ) : (
+              <h2>{title}</h2>
+            )}
           </div>
-          <p>Source: CBN, Vetiva Research, Rencap FSDH Research</p>
+          {edit ? (
+            <input
+              type="text"
+              value={text}
+              onChange={(e) => {
+                setText(e.target.value);
+              }}
+            />
+          ) : (
+            <p>{text}</p>
+          )}
         </div>
         <p>{number}</p>
         <div className={styles.ceoLayoutLine}></div>

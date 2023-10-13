@@ -47,7 +47,29 @@
   line-height: 125%; /* 20px */
 }
 
+.ceoLayoutText div input {
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 125%; /* 20px */
+  border: none;
+  background-color: transparent;
+  width: 100%;
+  text-align: center;
+}
+
 .ceoLayoutText > p {
+  color: #000;
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.ceoLayoutText > input {
+  border: none;
   color: #000;
   text-align: center;
   font-size: 12px;
