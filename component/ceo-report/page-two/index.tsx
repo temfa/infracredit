@@ -252,7 +252,7 @@ const CeoPageTwo = ({ edit, popupAction, popup, popupClose }: { edit: boolean; p
             <Doughnut data={chartDatas.data} options={chartDatas.options} onClick={edit ? popupAction : null} />
           </div>
           {popup ? (
-            <PopupStyle type={false} action={popupClose}>
+            <PopupStyle action={popupClose} width="53%" maxWidth="760px" height="80vh">
               <div className={styles.chartPopup}>
                 <div className={styles.chartHeader}>
                   <h2>Pie Chart</h2>

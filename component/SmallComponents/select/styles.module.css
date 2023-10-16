@@ -1,0 +1,29 @@
+.selectComp > select {
+  border-radius: 8px;
+  border: 0.5px solid #a4a7b4;
+  background: #f4f7ff;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  color: var(--infra-neutral-900, #272a3c);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%; /* 20px */
+  appearance: none;
+}
+.selectComp > label {
+  color: #9093a0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+}
+.selectComp {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

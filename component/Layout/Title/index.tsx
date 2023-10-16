@@ -15,14 +15,14 @@ const Title = ({ text, admin, action }: { text: string; admin?: string; action?:
             </>
           ) : null}
         </h2>
-        <p>12th May, 2023</p>
+        {/* <p>12th May, 2023</p> */}
       </div>
       {admin === "admin" ? (
         <div className={styles.layoutAction} onClick={action}>
           <Plus />
           <h2>Create New User</h2>
         </div>
-      ) : admin === "dashboard" ? (
+      ) : admin === "supervisor" ? (
         <div className={styles.layoutAction2} onClick={action}>
           <Assign />
           <h2>Assign New Report</h2>

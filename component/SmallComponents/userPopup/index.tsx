@@ -6,6 +6,7 @@ import Image from "next/image";
 import Popup from "../popup";
 
 const UserPopup = ({ action }: any) => {
+  const role = window.localStorage.getItem("role");
   return (
     <Popup>
       <div className={styles.userPopupContainer}>
@@ -20,7 +21,7 @@ const UserPopup = ({ action }: any) => {
             <Image src={User} alt="user" width={120} />
             <div>
               <h2>Olusanya Ezekiel</h2>
-              <p>USER</p>
+              <p>{role}</p>
             </div>
           </div>
           <div className={styles.userPopupWrapper}>

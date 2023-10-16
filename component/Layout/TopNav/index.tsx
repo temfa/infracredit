@@ -5,6 +5,7 @@ import Image from "next/image";
 import SidebarLogo from "@/component/Svgs/sidebarLogo";
 import Searchbox from "@/component/Svgs/searchbox";
 const Topnav = ({ action }: any) => {
+  const role = window.localStorage.getItem("role");
   return (
     <div className={styles.topNamMain}>
       <div className={styles.logoInfra}>
@@ -22,7 +23,7 @@ const Topnav = ({ action }: any) => {
           <div className={styles.userDetail} onClick={action}>
             <div className={styles.user}>
               <h2>Olusanya Ezekiel</h2>
-              <p>USER</p>
+              <p>{role}</p>
             </div>
             <Image src="/Image/Ellipse2.png" width="48" height="48" alt="username" />
           </div>

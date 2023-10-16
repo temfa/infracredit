@@ -1,0 +1,82 @@
+.singleTaskContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--infra-neutral-50, #e0e3f0);
+  background: #fff;
+  padding: 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.singleTaskHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.singleTaskHeader h2 {
+  color: var(--infra-neutral-900, #272a3c);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.singleTaskHeader p {
+  color: var(--infra-neutral-500, #7c7f8c);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.singleTaskComment {
+  display: flex;
+  /* justify-content: space-between; */
+  gap: -8px;
+}
+
+.singleTaskComment img {
+  margin-left: -8px;
+}
+
+.singleTaskComment img:first-child {
+  margin-left: 0px;
+}
+
+.line {
+  width: 100%;
+  background: #e0e3f0;
+  height: 1px;
+}
+
+.singleTaskBody {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.singleTaskBody div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.singleTaskBody div p {
+  color: var(--infra-neutral-600, #686b78);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.singleTaskBody div h2 {
+  color: #ff7871;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}

@@ -6,7 +6,7 @@ import PrimaryButton from "../SmallComponents/buttons/primarybutton";
 const Createuser = ({ action }: { action?: any }) => {
   const [active, setActive] = useState(false);
   return (
-    <PopupStyle action={action} type={true}>
+    <PopupStyle action={action} width="36%" maxwidth="520px" height="60vh">
       <div className={styles.createUser}>
         <h2>Create User</h2>
         <div className={styles.createGroup}>

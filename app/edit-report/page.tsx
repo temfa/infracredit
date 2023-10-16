@@ -25,16 +25,33 @@ import CeoPageSixteen from "@/component/ceo-report/page-sixteen";
 import { useRouter } from "next/navigation";
 import ReportDescription from "@/component/report-description";
 import Comments from "@/component/comments";
+import UserPopup from "@/component/SmallComponents/userPopup";
+import { toast } from "react-toastify";
 
 const EditReport = () => {
   const router = useRouter();
   const [edit, setEdit] = useState(false);
   const [title, setTitle] = useState("CEO REPORT");
   const [popup, setPopup] = useState(false);
+  const [chart, setChart] = useState(false);
+  const [overlay, setOverlay] = useState(false);
   return (
     <div className={styles.editReport}>
-      <Topnav />
+      <Topnav
+        action={() => {
+          setOverlay(true);
+          setPopup(true);
+        }}
+      />
       <div className={popup === true ? styles.editReportBodys : styles.editReportBody}>
+        {overlay && popup ? (
+          <UserPopup
+            action={() => {
+              setOverlay(false);
+              setPopup(false);
+            }}
+          />
+        ) : null}
         <div className={styles.editReportHead}>
           <div className={styles.editReportText}>
             <div>
@@ -68,6 +85,7 @@ const EditReport = () => {
               <button
                 onClick={() => {
                   setEdit(true);
+                  toast.warning("Edit Mode");
                 }}>
                 Edit
               </button>
@@ -76,6 +94,7 @@ const EditReport = () => {
             <button
               onClick={() => {
                 setEdit(false);
+                toast.success("Saved Successfully");
               }}>
               Save
             </button>
@@ -96,11 +115,13 @@ const EditReport = () => {
                 edit={edit}
                 popupAction={() => {
                   setPopup(true);
+                  setChart(true);
                 }}
                 popupClose={() => {
                   setPopup(false);
+                  setChart(false);
                 }}
-                popup={popup}
+                popup={chart}
               />
             </CeoLayout>
             <CeoLayout edit={edit} number={4}>

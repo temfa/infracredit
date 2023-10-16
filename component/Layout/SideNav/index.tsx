@@ -19,8 +19,8 @@ const Sidenav = () => {
           color: pathName === "/admin/Dashboard" ? "#3F7ABA" : "#545764",
           color2: pathName === "/admin/Draft" ? "#3F7ABA" : "#545764",
           color3: pathName === "/admin/Deleted" ? "#3F7ABA" : "#545764",
-          color4: pathName === "/admin/Tasks" ? "#3F7ABA" : "#545764",
-          color5: pathName === "/admin" ? "#3F7ABA" : "#545764",
+          color4: pathName === "/admin/Tasks" ? true : false,
+          color5: pathName === "/admin" ? true : false,
         })?.map((item, index) => {
           return item !== null ? (
             <div className={pathName === item.link ? `${styles.sideIcon} ${styles.active}` : styles.sideIcon} key={index}>
@@ -51,6 +51,7 @@ const Sidenav = () => {
           }}
           action2={() => {
             router.push("/");
+            localStorage.removeItem("role");
           }}
         />
       ) : null}

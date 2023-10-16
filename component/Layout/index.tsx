@@ -1,23 +1,23 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./styles.module.css";
-import { useRouter, usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
-import Topnav from "./TopNav";
-import UserPopup from "../SmallComponents/userPopup";
-import Sidenav from "./SideNav";
+// import styles from "./styles.module.css";
+// import { useRouter, usePathname } from "next/navigation";
+// import { AnimatePresence, motion } from "framer-motion";
+// import Topnav from "./TopNav";
+// import UserPopup from "../SmallComponents/userPopup";
+// import Sidenav from "./SideNav";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Layout = ({ children }: { children: any }) => {
-  const [overlay, setoverlay] = useState(false);
-  const variants = {
-    hidden: { background: 0, x: 200, y: 0 },
-    enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 0, y: -200 },
-  };
+  // const [overlay, setoverlay] = useState(false);
+  // const variants = {
+  //   hidden: { background: 0, x: 200, y: 0 },
+  //   enter: { opacity: 1, x: 0, y: 0 },
+  //   exit: { opacity: 0, x: 0, y: -200 },
+  // };
   // const router = useRouter();
-  const pathname = usePathname();
-  console.log(pathname.split("/")[1]);
+  // const pathname = usePathname();
   return (
     <div>
       <ToastContainer />

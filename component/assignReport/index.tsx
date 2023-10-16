@@ -5,8 +5,9 @@ import PrimaryButton from "../SmallComponents/buttons/primarybutton";
 
 const AssignReport = ({ action }: any) => {
   const [active, setActive] = useState(false);
+  const [users, setUsers] = useState([""]);
   return (
-    <PopupStyle action={action} type={true}>
+    <PopupStyle action={action} width="36%" maxwidth="520px" height="70vh">
       <div className={styles.createUser}>
         <h2>Assign New Report</h2>
         {/* <div className={styles.createGroup}>
@@ -39,11 +40,38 @@ const AssignReport = ({ action }: any) => {
             <input type="text" placeholder="2023" />
           </div>
         </div>
+        <div className={styles.createAdd}>
+          <div className={styles.createGroup}>
+            <label>User</label>
+            {users?.map((user: any, index) => {
+              return (
+                <input
+                  key={index}
+                  type="text"
+                  placeholder="Ezekiel@gmail.com"
+                  value={user}
+                  onChange={(e) => {
+                    const newValue = [...users];
+                    newValue[index] = e.target.value;
+                    setUsers(newValue);
+                  }}
+                />
+              );
+            })}
+          </div>
+          <div
+            className={styles.add}
+            onClick={() => {
+              setUsers((arr) => [...arr, ""]);
+            }}>
+            <p>Add another user</p>
+          </div>
+        </div>
         <div className={styles.createGroup}>
-          <label>User</label>
+          <label>Comment</label>
           <input
             type="text"
-            placeholder="Ezekiel@gmail.com"
+            placeholder="Comment..."
             onChange={(e) => {
               if (e.target.value.length > 0) {
                 setActive(true);
@@ -52,10 +80,6 @@ const AssignReport = ({ action }: any) => {
               }
             }}
           />
-        </div>
-        <div className={styles.createGroup}>
-          <label>Comment</label>
-          <input type="text" placeholder="Comment..." />
         </div>
         <PrimaryButton
           text="Assign Report"

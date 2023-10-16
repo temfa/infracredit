@@ -4,6 +4,38 @@
   gap: 32px;
 }
 
+.taskHeader {
+  display: flex;
+}
+
+.taskHeader h2 {
+  display: flex;
+  width: 200px;
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  color: var(--infra-neutral-600, #686b78);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 22.5px */
+  width: 200px;
+  cursor: pointer;
+}
+
+.taskHeader .active {
+  border-radius: 16px 16px 0px 0px;
+  border-bottom: 2px solid var(--infra-primary-2900, #287750);
+  background: var(--White, #fff);
+  color: var(--infra-primary-2900, #287750);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 125%; /* 22.5px */
+}
+
 .taskActive {
   display: flex;
   width: 100%;
@@ -18,12 +50,6 @@
   font-style: normal;
   font-weight: 600;
   line-height: 125%; /* 30px */
-}
-
-.taskCont {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
 }
 
 .taskSingle {
@@ -43,5 +69,117 @@
 }
 
 .taskSingle > div {
+  width: 100%;
+}
+
+.taskBody {
+  width: 100%;
+  display: flex;
+  gap: 24px;
+}
+
+.taskTodo,
+.taskInProgress,
+.taskCompleted,
+.taskUnderReview {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.taskTodo > h2 {
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--error-error-500, #ff3b30);
+  color: var(--infra-neutral-700, #545764);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  display: flex;
+  gap: 8px;
+}
+
+.taskTodo > h2 span,
+.taskInProgress > h2 span,
+.taskUnderReview > h2 span,
+.taskCompleted > h2 span {
+  width: 24px;
+  height: 24px;
+  border-radius: 100px;
+  border: 1px solid var(--infra-neutral-500, #7c7f8c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.taskTodo > h2 span p,
+.taskInProgress > h2 span p,
+.taskUnderReview > h2 span p,
+.taskCompleted > h2 span p {
+  color: var(--infra-neutral-500, #7c7f8c);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.taskCont {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid var(--infra-neutral-50, #e0e3f0);
+  background: #fff;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.taskInProgress > h2 {
+  border-bottom: 2px solid var(--info-info-500, #3c76f1);
+  display: flex;
+  gap: 8px;
+  padding-bottom: 8px;
+  color: var(--infra-neutral-700, #545764);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.taskUnderReview > h2 {
+  border-bottom: 2px solid var(--warning-warning-500, #ff8f00);
+  display: flex;
+  gap: 8px;
+  padding-bottom: 8px;
+  color: var(--infra-neutral-700, #545764);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.taskCompleted > h2 {
+  border-bottom: 2px solid var(--success-success-500, #34c759);
+  display: flex;
+  gap: 8px;
+  padding-bottom: 8px;
+  color: var(--infra-neutral-700, #545764);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.teamsBody {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.teamsCont {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
 }

@@ -6,8 +6,7 @@ import Taskssvg from "@/component/Svgs/taskssvg";
 import AdminSvg from "@/component/Svgs/admin";
 
 const SidenavData = ({ color, color2, color3, color4, color5 }: { color: any; color2: any; color3: any; color4: any; color5: any }) => {
-  const user: string = "Admin";
-
+  // const role = window.localStorage.getItem("role");
   return [
     {
       svg: <DashboardIcon color={color} />,
@@ -29,13 +28,13 @@ const SidenavData = ({ color, color2, color3, color4, color5 }: { color: any; co
       title: "Tasks",
       link: "/admin/Tasks",
     },
-    user === "Admin"
-      ? {
-          svg: <AdminSvg color={color5} />,
-          title: "Admin",
-          link: "/admin",
-        }
-      : null,
+    // role === "Admin"
+    //   ? {
+    //       svg: <AdminSvg color={color5} />,
+    //       title: "Admin",
+    //       link: "/admin",
+    //     }
+    //   : null,
   ];
 };
 

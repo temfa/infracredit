@@ -27,6 +27,12 @@
 
 .reportWrapper {
   width: 100%;
+  display: flex;
+  gap: 24px;
+}
+
+.reportWrapper > div {
+  width: 24%;
 }
 
 .historyContainer {
@@ -43,6 +49,33 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+.historyWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.historyWrapper h2 {
+  width: 17%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  color: var(--infra-neutral-600, #686b78);
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 125%; /* 20px */
+  cursor: pointer;
+}
+
+.historyWrapper .active {
+  border-bottom: 2px solid var(--infra-primary-2900, #287750);
+  background: var(--infra-primary-225, #f0ffff);
+  color: var(--infra-primary-2900, #287750);
+  font-weight: 600;
 }
 
 .historyHead {

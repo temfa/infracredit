@@ -9,14 +9,18 @@ import Image from "next/image";
 import Macbook from "../../../public/images/macbook.png";
 import Infrawhitelogo from "@/component/Svgs/infrawhitelogo";
 import { useRouter } from "next/navigation";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import Select from "@/component/SmallComponents/select";
+import Loader from "@/component/SmallComponents/loader";
 
 const Login = () => {
   const router = useRouter();
   const [active, setActive] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
+  const roles = ["User", "Admin", "Manager", "Supervisor"];
   return (
     <div className={styles.pageCov}>
       <div className={styles.secionA}>
@@ -33,6 +37,14 @@ const Login = () => {
           </div>
           <div className={styles.sectionBGroup}>
             <div className={styles.inputs}>
+              <Select
+                text="Select Role"
+                selectText="Choose Role"
+                options={roles}
+                action={(e: any) => {
+                  setRole(e.target.value);
+                }}
+              />
               <Input
                 text="Email Address"
                 placeholder="Enter Email Address"
@@ -58,18 +70,27 @@ const Login = () => {
               />
             </div>
             <div className={styles.inputsBtn}>
-              <PrimaryButton
-                text="Log In"
-                active={active}
-                action={() => {
-                  const split = username.split("@");
-                  if (split[1] === "infracredit.ng") {
-                    router.push("/admin/Dashboard");
-                  } else {
-                    toast.error("Email must be an Infracredit email");
-                  }
-                }}
-              />
+              {loading ? (
+                <Loader />
+              ) : (
+                <PrimaryButton
+                  text="Log In"
+                  active={active}
+                  action={() => {
+                    setLoading(true);
+                    setTimeout(() => {
+                      setLoading(false);
+                      const split = username.split("@");
+                      if (split[1] === "infracredit.ng") {
+                        localStorage.setItem("role", role);
+                        router.push("/admin/Dashboard");
+                      } else {
+                        toast.error("Email must be an Infracredit email");
+                      }
+                    }, 2000);
+                  }}
+                />
+              )}
             </div>
           </div>
         </div>
