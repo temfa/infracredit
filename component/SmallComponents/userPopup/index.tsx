@@ -4,9 +4,13 @@ import Close from "@/component/Svgs/close";
 import User from "../../../public/images/user.png";
 import Image from "next/image";
 import Popup from "../popup";
+import { useAppSelector } from "@/reduxtoolkit/store/store";
 
 const UserPopup = ({ action }: any) => {
-  const role = window.localStorage.getItem("role");
+  // let role;
+  // if (typeof window !== "undefined") {
+  const { role } = useAppSelector((store) => store);
+  // }
   return (
     <Popup>
       <div className={styles.userPopupContainer}>
@@ -21,7 +25,7 @@ const UserPopup = ({ action }: any) => {
             <Image src={User} alt="user" width={120} />
             <div>
               <h2>Olusanya Ezekiel</h2>
-              <p>{role}</p>
+              <p>{role.role}</p>
             </div>
           </div>
           <div className={styles.userPopupWrapper}>

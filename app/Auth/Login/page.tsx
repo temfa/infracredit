@@ -12,14 +12,17 @@ import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import Select from "@/component/SmallComponents/select";
 import Loader from "@/component/SmallComponents/loader";
+import { setRole } from "@/reduxtoolkit/slice/role";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
   const [active, setActive] = useState(false);
   const [loading, setLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [role, setRole] = useState("");
+  const [role, setRoles] = useState("");
   const roles = ["User", "Admin", "Manager", "Supervisor"];
   return (
     <div className={styles.pageCov}>
@@ -42,7 +45,7 @@ const Login = () => {
                 selectText="Choose Role"
                 options={roles}
                 action={(e: any) => {
-                  setRole(e.target.value);
+                  setRoles(e.target.value);
                 }}
               />
               <Input
@@ -82,7 +85,9 @@ const Login = () => {
                       setLoading(false);
                       const split = username.split("@");
                       if (split[1] === "infracredit.ng") {
-                        localStorage.setItem("role", role);
+                        // localStorage.setItem("role", role);
+
+                        dispatch(setRole(role));
                         router.push("/admin/Dashboard");
                       } else {
                         toast.error("Email must be an Infracredit email");

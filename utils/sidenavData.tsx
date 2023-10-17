@@ -6,7 +6,11 @@ import Taskssvg from "@/component/Svgs/taskssvg";
 import AdminSvg from "@/component/Svgs/admin";
 
 const SidenavData = ({ color, color2, color3, color4, color5 }: { color: any; color2: any; color3: any; color4: any; color5: any }) => {
-  // const role = window.localStorage.getItem("role");
+  // const role =
+  let role;
+  if (typeof window !== "undefined") {
+    role = window.localStorage.getItem("role");
+  }
   return [
     {
       svg: <DashboardIcon color={color} />,

@@ -7,15 +7,19 @@ import Title from "@/component/Layout/Title";
 import DashboardLayout from "@/component/layouts/dashboard-layout";
 import SingleTask from "@/component/single-task";
 import SingleTeam from "@/component/single-team";
+import { useAppSelector } from "@/reduxtoolkit/store/store";
 
 const Tasks = () => {
-  const role = localStorage.getItem("role");
-  const [state, setState] = useState(role === "Admin" ? "Teams" : "Tasks");
+  // let role;
+  // if (typeof window !== "undefined") {
+  const { role } = useAppSelector((store) => store);
+  // };
+  const [state, setState] = useState(role.role === "Admin" ? "Teams" : "Tasks");
   return (
     <DashboardLayout>
       <div className={styles.taskContainer}>
         <Title text="My Tasks" />
-        {role === "Admin" ? (
+        {role.role === "Admin" ? (
           <div className={styles.taskHeader}>
             <h2
               className={state === "Teams" ? styles.active : ""}
