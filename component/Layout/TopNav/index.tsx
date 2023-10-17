@@ -11,7 +11,6 @@ const Topnav = ({ action }: any) => {
   // let role;
   // if (typeof window !== "undefined") {
   const { role } = useAppSelector((store) => store);
-  console.log(role);
   // }
   return (
     <div className={styles.topNamMain}>

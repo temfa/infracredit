@@ -72,7 +72,7 @@ const Dashboard = () => {
           }}
         />
         <div className={styles.dashboardWrapper}>
-          <Cards role={role} />
+          <Cards role={role.role} />
           {role.role === "Admin" ? (
             <>
               <OrganizationTask />
