@@ -1,15 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 const roleSlice = createSlice({
   name: "role",
-  initialState: { role: "" },
+  initialState: "",
   reducers: {
     setRole: (state, { payload }) => {
       return payload;
     },
     clearRole: () => {
-      return {
-        role: "",
-      };
+      return "";
     },
   },
 });

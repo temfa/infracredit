@@ -6,9 +6,12 @@ import { usePathname, useRouter } from "next/navigation";
 import Logout from "@/component/Svgs/logout";
 import LogoutPopup from "@/component/SmallComponents/logoutPopup";
 import SidenavData from "@/utils/sidenavData";
+import { useDispatch } from "react-redux";
+import { clearRole } from "@/reduxtoolkit/slice/role";
 
 const Sidenav = () => {
   const pathName = usePathname();
+  const dispatch = useDispatch();
   const router = useRouter();
   const [overlay, setOverlay] = useState(false);
   return (
@@ -51,7 +54,7 @@ const Sidenav = () => {
           }}
           action2={() => {
             router.push("/");
-            localStorage.removeItem("role");
+            dispatch(clearRole());
           }}
         />
       ) : null}

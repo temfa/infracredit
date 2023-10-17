@@ -66,14 +66,14 @@ const Dashboard = () => {
       <div className={styles.dashboardContainer}>
         <Title
           text="Welcome back"
-          admin={role.role === "Supervisor" ? "supervisor" : role.role === "Admin" ? "admin" : "dashboard"}
+          admin={role === "Supervisor" ? "supervisor" : role === "Admin" ? "admin" : "dashboard"}
           action={() => {
             setState(true);
           }}
         />
         <div className={styles.dashboardWrapper}>
-          <Cards role={role.role} />
-          {role.role === "Admin" ? (
+          <Cards role={role} />
+          {role === "Admin" ? (
             <>
               <OrganizationTask />
               <div className={styles.historyContainer}>
@@ -132,7 +132,7 @@ const Dashboard = () => {
           ) : (
             <>
               <div className={styles.reportContainer}>
-                {role.role === "Supervisor" ? <h2>Pending Review</h2> : <h2>Current Tasks</h2>}
+                {role === "Supervisor" ? <h2>Pending Review</h2> : <h2>Current Tasks</h2>}
                 <div className={styles.reportWrapper}>
                   {/* <SingleReportCard title="Annual Report Template" number="12" text="Edit" type={false} />
               <SingleReportCard title="Quarterly Report Template" number="12" text="Edit" type={false} />
@@ -146,7 +146,7 @@ const Dashboard = () => {
                   </div>
                 </div>
               </div>
-              {role.role === "Admin" ? null : role.role === "User" ? null : <OrganizationTask />}
+              {role === "Admin" ? null : role === "User" ? null : <OrganizationTask />}
               <div className={styles.historyContainer}>
                 <h2>History</h2>
                 <div>

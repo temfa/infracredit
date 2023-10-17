@@ -25,7 +25,7 @@ const UserPopup = ({ action }: any) => {
             <Image src={User} alt="user" width={120} />
             <div>
               <h2>Olusanya Ezekiel</h2>
-              <p>{role.role}</p>
+              <p>{role}</p>
             </div>
           </div>
           <div className={styles.userPopupWrapper}>

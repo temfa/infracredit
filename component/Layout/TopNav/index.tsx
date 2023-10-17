@@ -29,7 +29,7 @@ const Topnav = ({ action }: any) => {
           <div className={styles.userDetail} onClick={action}>
             <div className={styles.user}>
               <h2>Olusanya Ezekiel</h2>
-              <p>{role.role}</p>
+              <p>{role}</p>
             </div>
             <Image src="/Image/Ellipse2.png" width="48" height="48" alt="username" />
           </div>

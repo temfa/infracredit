@@ -3,7 +3,7 @@ import { setupListeners } from "@reduxjs/toolkit/dist/query/react";
 import { mutationApi } from "../api/mutationApi";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { combineReducers } from "redux";
-import { persistReducer, FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from "redux-persist";
+import { persistReducer, FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistStore } from "redux-persist";
 import roleReducer from "../slice/role";
 
 import storage from "redux-persist/lib/storage";
@@ -38,3 +38,4 @@ export const useAppDispatch = () => useDispatch<AppDispatch>();
 setupListeners(store.dispatch);
 
 export default store;
+export const persistor = persistStore(store);

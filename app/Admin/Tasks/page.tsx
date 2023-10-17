@@ -14,12 +14,12 @@ const Tasks = () => {
   // if (typeof window !== "undefined") {
   const { role } = useAppSelector((store) => store);
   // };
-  const [state, setState] = useState(role.role === "Admin" ? "Teams" : "Tasks");
+  const [state, setState] = useState(role === "Admin" ? "Teams" : "Tasks");
   return (
     <DashboardLayout>
       <div className={styles.taskContainer}>
         <Title text="My Tasks" />
-        {role.role === "Admin" ? (
+        {role === "Admin" ? (
           <div className={styles.taskHeader}>
             <h2
               className={state === "Teams" ? styles.active : ""}
