@@ -100,7 +100,7 @@ const Tasks = () => {
                 />
                 <SingleTask
                   completed={false}
-                  title="NEW BUSINESS/CREDIT COMMITTEE"
+                  title="NEW BUSINESS AND CREDIT COMMITTEE"
                   comment="Work on pages 1,2,3 , should be ready by Monday"
                   number={13}
                   date="Due Monday ,22/04/2023"

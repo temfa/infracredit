@@ -34,7 +34,21 @@ const EditReport = ({ params }: { params: { slug: string } }) => {
   console.log(params);
   const router = useRouter();
   const [edit, setEdit] = useState(false);
-  const [title, setTitle] = useState(params.slug);
+  const [title, setTitle] = useState(
+    params.slug === "CEOReport"
+      ? "CEO Report"
+      : params.slug === "MANAGEMENTREPORT"
+      ? "MANAGEMENT REPORT"
+      : params.slug === "FINANCEANDAUDITCOMMITTEE"
+      ? "FINANCE AND AUDIT COMMITTEE"
+      : params.slug === "NEWBUSINESSANDCREDITCOMMITTEE"
+      ? "NEW BUSINESS AND CREDIT COMMITTEE"
+      : params.slug === "REMUNERATIONANDNOMINATIONCOMMITTEE"
+      ? "REMUNERATION AND NOMINATION COMMITTEE"
+      : params.slug === "RISKANDCAPITALCOMMITTEE"
+      ? "RISK AND CAPITAL COMMITTEE"
+      : ""
+  );
   const [popup, setPopup] = useState(false);
   const [overlay, setOverlay] = useState(false);
   return (
