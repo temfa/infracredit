@@ -19,7 +19,7 @@ const Title = ({ text, admin, action }: { text: string; admin?: string; action?:
       </div>
       {admin === "admin" ? (
         <div className={styles.layoutAction} onClick={action}>
-          <Plus />
+          <Plus color="#FFFFFF" />
           <h2>Create New User</h2>
         </div>
       ) : admin === "supervisor" ? (
