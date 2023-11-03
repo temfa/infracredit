@@ -37,22 +37,26 @@
   border-top: 1px solid #7c7c7c;
 }
 
-.portfolioSingle p:first-child {
+.portfolioSingle p:first-child,
+.portfolioSingle input:first-child {
   width: 62%;
   color: #363636;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  border: none;
 }
 
-.portfolioSingle p:last-child {
+.portfolioSingle p:last-child,
+.portfolioSingle input:last-child {
   width: 38%;
   color: #000;
   font-size: 15px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  border: none;
 }
 
 .portfolioChart {

@@ -27,13 +27,15 @@ import ReportDescription from "@/component/report-description";
 import Comments from "@/component/comments";
 import UserPopup from "@/component/SmallComponents/userPopup";
 import { toast } from "react-toastify";
+import CeoReport from "@/component/ceo-report";
+import Renumeration from "@/component/renumeration-com";
 
-const EditReport = () => {
+const EditReport = ({ params }: { params: { slug: string } }) => {
+  console.log(params);
   const router = useRouter();
   const [edit, setEdit] = useState(false);
-  const [title, setTitle] = useState("CEO REPORT");
+  const [title, setTitle] = useState(params.slug);
   const [popup, setPopup] = useState(false);
-  const [chart, setChart] = useState(false);
   const [overlay, setOverlay] = useState(false);
   return (
     <div className={styles.editReport}>
@@ -104,66 +106,7 @@ const EditReport = () => {
         <div className={styles.editReportContainer}>
           <EditPages />
           <div className={styles.editReportContent}>
-            <CeoLayout edit={edit} number={1}>
-              <TableContent edit={edit} />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={2}>
-              <CeoPageOne edit={edit} />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={3}>
-              <CeoPageTwo
-                edit={edit}
-                popupAction={() => {
-                  setPopup(true);
-                  setChart(true);
-                }}
-                popupClose={() => {
-                  setPopup(false);
-                  setChart(false);
-                }}
-                popup={chart}
-              />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={4}>
-              <CeoPageThree />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={5}>
-              <CeoPageFour />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={6}>
-              <CeoPageFive />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={7}>
-              <CeoPageSix />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={8}>
-              <CeoPageSeven />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={9}>
-              <CeoPageEight />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={10}>
-              <CeoPageNine />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={11}>
-              <CeoPageTen />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={12}>
-              <CeoPageEleven />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={13}>
-              <CeoPageTwelve />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={14}>
-              <CeoPageThirteen />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={15}>
-              <CeoPageFourteen />
-            </CeoLayout>
-            <CeoLayout edit={edit} number={17}>
-              <CeoPageSixteen />
-            </CeoLayout>
-            <CeoLastPage />
+            {params.slug === "CEOReport" ? <CeoReport edit={edit} /> : params.slug === "REMUNERATIONANDNOMINATIONCOMMITTEE" ? <Renumeration edit={edit} /> : <h2>Hello World</h2>}
           </div>
           <div className={styles.editReportDiscuss}>
             <ReportDescription />

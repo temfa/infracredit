@@ -145,3 +145,19 @@ export const comment = [
     time: "12 may 2023",
   },
 ];
+
+interface CeoPage3 {
+  edit: boolean;
+  popupAction1: any;
+  popupAction2: any;
+  popupAction3: any;
+  popup: boolean;
+  popup1: boolean;
+  popupClose1: any;
+  popup2: boolean;
+  popupClose2: any;
+  popup3: boolean;
+  popupClose3: any;
+}
+
+export default CeoPage3;

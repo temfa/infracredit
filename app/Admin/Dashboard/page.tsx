@@ -16,7 +16,7 @@ import { useAppSelector } from "@/reduxtoolkit/store/store";
 
 const Dashboard = () => {
   // let role = localStorage.getItem("role") || "";
-  const { role } = useAppSelector((store) => store);
+  const role = useAppSelector((store) => store.role);
   const [state, setState] = useState(false);
   const report = [
     {

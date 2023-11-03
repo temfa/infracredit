@@ -6,7 +6,7 @@ import Calender from "../Svgs/calender";
 import PrimaryButton from "../SmallComponents/buttons/primarybutton";
 import { useRouter } from "next/navigation";
 
-const SingleTask = ({ title, comment, number, date }: { title: string; comment: string; number: number; date: string }) => {
+const SingleTask = ({ title, comment, number, date, completed }: { title: string; comment: string; number: number; date: string; completed: boolean }) => {
   const router = useRouter();
   return (
     <div className={styles.singleTaskContainer}>
@@ -30,13 +30,15 @@ const SingleTask = ({ title, comment, number, date }: { title: string; comment: 
           <h2>{date}</h2>
         </div>
       </div>
-      <PrimaryButton
-        text="Edit Report"
-        active={true}
-        action={() => {
-          router.push("/edit-report");
-        }}
-      />
+      {completed ? null : (
+        <PrimaryButton
+          text="Edit Report"
+          active={true}
+          action={() => {
+            router.push(`/edit-report/${title.replaceAll(" ", "")}`);
+          }}
+        />
+      )}
     </div>
   );
 };

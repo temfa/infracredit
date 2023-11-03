@@ -9,7 +9,7 @@ import { useAppSelector } from "@/reduxtoolkit/store/store";
 const UserPopup = ({ action }: any) => {
   // let role;
   // if (typeof window !== "undefined") {
-  const { role } = useAppSelector((store) => store);
+  const role = useAppSelector((store) => store.role);
   // }
   return (
     <Popup>

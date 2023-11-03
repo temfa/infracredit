@@ -10,7 +10,7 @@ import { useAppSelector } from "@/reduxtoolkit/store/store";
 const Topnav = ({ action }: any) => {
   // let role;
   // if (typeof window !== "undefined") {
-  const { role } = useAppSelector((store) => store);
+  const role = useAppSelector((store) => store.role);
   // }
   return (
     <div className={styles.topNamMain}>

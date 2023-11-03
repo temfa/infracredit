@@ -10,7 +10,7 @@
 
 .taskHeader h2 {
   display: flex;
-  width: 200px;
+  font-family: "Inter", sans-serif;
   padding: 16px;
   justify-content: center;
   align-items: center;
@@ -85,6 +85,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 25%;
 }
 
 .taskTodo > h2 {
@@ -180,6 +181,31 @@
 
 .teamsCont {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 24px;
   width: 100%;
+}
+
+.createNew {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  width: 23%;
+  border-radius: 12px;
+  border: 2px dashed var(--infra-secondary-1600, #59abdc);
+  background: var(--infra-secondary-125, #e5ffff);
+  cursor: pointer;
+}
+
+.createNew h2 {
+  color: var(--infra-secondary-1800, #3183b4);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  width: 50%;
 }

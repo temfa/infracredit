@@ -4,9 +4,10 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import "chart.js/auto";
 import type { ChartData, ChartOptions } from "chart.js";
+import ChartPopup from "@/component/chart-popup";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-const CeoPageEight = () => {
+const CeoPageEight = ({ edit, popup, popup1, popupClose, popupAction }: { edit: boolean; popup: boolean; popup1: boolean; popupClose: any; popupAction: any }) => {
   interface Data {
     label: string;
     amount: string;
@@ -104,29 +105,90 @@ const CeoPageEight = () => {
       },
     },
   });
+  const [titleData, setTitleData] = useState({
+    title1: "Portfolio Management",
+    title2: "Portfolio at a glance",
+    title3: "RATING DISTRIBUTION (NGN BN)",
+  });
   return (
     <div className={styles.pageEight}>
-      <h2>Portfolio Management</h2>
+      {edit ? (
+        <input
+          type="text"
+          value={titleData.title1}
+          onChange={(e) => {
+            setTitleData({ ...titleData, title1: e.target.value });
+          }}
+        />
+      ) : (
+        <h2>{titleData.title1}</h2>
+      )}
       <div className={styles.portfolioTable}>
-        <h2>Portfolio at a glance</h2>
+        {edit ? (
+          <input
+            type="text"
+            value={titleData.title2}
+            onChange={(e) => {
+              setTitleData({ ...titleData, title2: e.target.value });
+            }}
+          />
+        ) : (
+          <h2>{titleData.title2}</h2>
+        )}
         <div>
           {data?.map((item, index) => {
             return (
               <div className={styles.portfolioSingle} key={index}>
-                <p className={styles.portfolioLabel}>{item.label}</p>
-                <p className={styles.portfolioAmount}>{item.amount}</p>
+                {edit ? (
+                  <>
+                    <input
+                      type="text"
+                      value={item.label}
+                      onChange={(e) => {
+                        const newState = [...data];
+                        newState[index].label = e.target.value;
+                        setData(newState);
+                      }}
+                    />
+                    <input
+                      type="text"
+                      value={item.amount}
+                      onChange={(e) => {
+                        const newState = [...data];
+                        newState[index].amount = e.target.value;
+                        setData(newState);
+                      }}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <p className={styles.portfolioLabel}>{item.label}</p>
+                    <p className={styles.portfolioAmount}>{item.amount}</p>
+                  </>
+                )}
               </div>
             );
           })}
         </div>
       </div>
       <div className={styles.portfolioChart}>
-        <h2>RATING DISTRIBUTION (NGN BN)</h2>
+        {edit ? (
+          <input
+            type="text"
+            value={titleData.title3}
+            onChange={(e) => {
+              setTitleData({ ...titleData, title3: e.target.value });
+            }}
+          />
+        ) : (
+          <h2>{titleData.title3}</h2>
+        )}
         <div className={styles.portfolioChart2}>
           <div>
-            <Doughnut data={chartData.data} options={chartData.options} />
+            <Doughnut data={chartData.data} options={chartData.options} onClick={edit ? popupAction : null} />
           </div>
         </div>
+        {popup && popup1 ? <ChartPopup popupClose={popupClose} chartDatas={chartData} setChartDatas={setChartData} /> : null}
       </div>
     </div>
   );

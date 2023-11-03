@@ -50,6 +50,7 @@ const CeoPageOne = ({ edit }: { edit: boolean }) => {
                 <>
                   {edit ? (
                     <textarea
+                      key={index2}
                       value={subTitle}
                       onChange={(e) => {
                         const updatedData = [...data];

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 
-const CeoPageFourteen = () => {
+const CeoPageFourteen = ({ edit }: { edit: boolean }) => {
   interface Sample {
     title: string;
     first: string;
@@ -178,15 +178,67 @@ const CeoPageFourteen = () => {
       growth: "2.4%",
     },
   ]);
+  const [textData, setTextData] = useState({
+    title: "Statement of Financial Position - comparison with prior year",
+    text1: "",
+    text2: "December 2021",
+    text3: "December 2020",
+    text4: "YOY Growth",
+  });
   return (
     <div className={styles.pageFourteen}>
-      <h2>Statement of Financial Position- comparison with prior year</h2>
+      {edit ? (
+        <input
+          type="text"
+          value={textData.title}
+          onChange={(e) => {
+            setTextData({ ...textData, title: e.target.value });
+          }}
+        />
+      ) : (
+        <h2>{textData.title}</h2>
+      )}
       <div className={styles.statementTable}>
         <div className={styles.statementHead}>
-          <p></p>
-          <p>December 2021</p>
-          <p>December 2020</p>
-          <p>YOY Growth</p>
+          {edit ? (
+            <>
+              <input
+                type="text"
+                value={textData.text1}
+                onChange={(e) => {
+                  setTextData({ ...textData, text1: e.target.value });
+                }}
+              />
+              <input
+                type="text"
+                value={textData.text2}
+                onChange={(e) => {
+                  setTextData({ ...textData, text2: e.target.value });
+                }}
+              />
+              <input
+                type="text"
+                value={textData.text3}
+                onChange={(e) => {
+                  setTextData({ ...textData, text3: e.target.value });
+                }}
+              />
+              <input
+                type="text"
+                value={textData.text4}
+                onChange={(e) => {
+                  setTextData({ ...textData, text4: e.target.value });
+                }}
+              />
+            </>
+          ) : (
+            <>
+              <p>{textData.text1}</p>
+              <p>{textData.text2}</p>
+              <p>{textData.text3}</p>
+              <p>{textData.text4}</p>
+            </>
+          )}
         </div>
         <div className={styles.statementHeader}>
           <p></p>
@@ -197,10 +249,53 @@ const CeoPageFourteen = () => {
         {data?.map((item, index) => {
           return (
             <div className={styles.statementSingle} key={index}>
-              <p>{item.title}</p>
-              <p>{item.first}</p>
-              <p>{item.second}</p>
-              <p>{item.growth}</p>
+              {edit ? (
+                <>
+                  <input
+                    type="text"
+                    value={item.title}
+                    onChange={(e) => {
+                      const newState = [...data];
+                      newState[index].title = e.target.value;
+                      setData(newState);
+                    }}
+                  />
+                  <input
+                    type="text"
+                    value={item.first}
+                    onChange={(e) => {
+                      const newState = [...data];
+                      newState[index].first = e.target.value;
+                      setData(newState);
+                    }}
+                  />
+                  <input
+                    type="text"
+                    value={item.second}
+                    onChange={(e) => {
+                      const newState = [...data];
+                      newState[index].second = e.target.value;
+                      setData(newState);
+                    }}
+                  />
+                  <input
+                    type="text"
+                    value={item.growth}
+                    onChange={(e) => {
+                      const newState = [...data];
+                      newState[index].growth = e.target.value;
+                      setData(newState);
+                    }}
+                  />
+                </>
+              ) : (
+                <>
+                  <p>{item.title}</p>
+                  <p>{item.first}</p>
+                  <p>{item.second}</p>
+                  <p>{item.growth}</p>
+                </>
+              )}
             </div>
           );
         })}

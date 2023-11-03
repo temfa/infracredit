@@ -5,8 +5,10 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import "chart.js/auto";
 import type { ChartData, ChartOptions } from "chart.js";
+import ChartPopup from "@/component/chart-popup";
+import CeoPage3 from "@/utils/data";
 
-const CeoPageThree = () => {
+const CeoPageThree = ({ edit, popupAction1, popupAction2, popupAction3, popup, popup1, popupClose1, popup2, popupClose2, popup3, popupClose3 }: CeoPage3) => {
   interface LineProps {
     options: ChartOptions<"doughnut">;
     data: ChartData<"doughnut">;
@@ -140,22 +142,56 @@ const CeoPageThree = () => {
       },
     },
   });
+
+  const [data, setData] = useState({
+    title1: "III. 2021-2022 FY Guarantee Pipeline",
+    text1:
+      "The Origination & Structuring team is actively engaged in assessing new credit enhancement opportunities and diversifying the guarantee portfolio, which are at various stages of evaluation. As at 28 February 2022, InfraCredit’s pipeline of potential guarantee transactions totaled N301.5 Billion from 34 transactions, composed of N245.0 Billion of standard guarantees and N56.5 Billion of contingent refinancing guarantees. Of the 34 transactions, 33 are first-time clients with executed Mandate Letters and one (1) transaction involves follow-on debt instruments for LFZC.",
+    title2: "Categorisation of NGN301.5 Billion of Mandated Transactions as at 28 February 2022",
+    text2:
+      "The N301.5 Billion pipeline, consisting of 34 potential transactions for the next 12 – 18 months, can be split into eleven (11) industry sectors, with no individual sector comprising more than 37.5%, as shown in the pie chart below. Of these transactions, ten (10) totaling N93.4 Billion are projected to reach financial close in FY2022, in  addition to the N10 Bln already closed in Q1 2022. The remaining pipeline transactions (including contingent refinancings) are expected to roll over into 2023 In addition,  the pipeline can be broken down by products and geographical distribution. We have categorised the pipeline into six (6) credit enhancement products, with the guaranteed public bond accounting for the largest share (63.4%) of potential guarantee transactions, as shown in the chart below.",
+  });
   return (
     <div className={styles.pageThree}>
       <div className={styles.fy}>
-        <h2>III. 2021-2022 FY Guarantee Pipeline*</h2>
+        {edit ? (
+          <input
+            type="text"
+            value={data.title1}
+            onChange={(e) => {
+              setData({ ...data, title1: e.target.value });
+            }}
+          />
+        ) : (
+          <h2>{data.title1}*</h2>
+        )}
         <HeaderLine />
       </div>
-      <p>
-        The Origination & Structuring team is actively engaged in assessing new credit enhancement opportunities and diversifying the guarantee portfolio, which are at various
-        stages of evaluation. As at 28 February 2022, InfraCredit’s pipeline of potential guarantee transactions totaled N301.5 Billion from 34 transactions, composed of N245.0
-        Billion of standard guarantees and N56.5 Billion of contingent refinancing guarantees. Of the 34 transactions, 33 are first-time clients with executed Mandate Letters and
-        one (1) transaction involves follow-on debt instruments for LFZC.
-      </p>
+      {edit ? (
+        <textarea
+          value={data.text1}
+          onChange={(e) => {
+            setData({ ...data, text1: e.target.value });
+          }}
+        />
+      ) : (
+        <p>{data.text1}</p>
+      )}
       <div className={styles.categorization}>
         <div className={styles.pie}>
-          <h2>Categorisation of NGN301.5 Billion of Mandated Transactions as at 28 February 2022*</h2>
-          <Doughnut data={chartData.data} options={chartData.options} />
+          {edit ? (
+            <input
+              type="text"
+              value={data.title2}
+              onChange={(e) => {
+                setData({ ...data, title2: e.target.value });
+              }}
+            />
+          ) : (
+            <h2>{data.title2} *</h2>
+          )}
+          <Doughnut data={chartData.data} options={chartData.options} onClick={edit ? popupAction1 : null} />
+          {popup && popup1 ? <ChartPopup chartDatas={chartData} setChartDatas={setChartData} popupClose={popupClose1} /> : null}
         </div>
         <div className={styles.table}>
           <h2>H1 2022 Target</h2>
@@ -207,24 +243,28 @@ const CeoPageThree = () => {
           </div>
         </div>
       </div>
-
-      <p>
-        The N301.5 Billion pipeline, consisting of 34 potential transactions for the next 12 – 18 months, can be split into eleven (11) industry sectors, with no individual sector
-        comprising more than 37.5%, as shown in the pie chart below. Of these transactions, ten (10) totaling N93.4 Billion are projected to reach financial close in FY2022, in
-        addition to the N10 Bln already closed in Q1 2022. The remaining pipeline transactions (including contingent refinancings) are expected to roll over into 2023 In addition,
-        the pipeline can be broken down by products and geographical distribution. We have categorised the pipeline into six (6) credit enhancement products, with the guaranteed
-        public bond accounting for the largest share (63.4%) of potential guarantee transactions, as shown in the chart below.
-      </p>
+      {edit ? (
+        <textarea
+          value={data.text2}
+          onChange={(e) => {
+            setData({ ...data, text2: e.target.value });
+          }}
+        />
+      ) : (
+        <p>{data.text2}</p>
+      )}
+      {popup && popup2 ? <ChartPopup chartDatas={chartData2} setChartDatas={setChartData2} popupClose={popupClose2} /> : null}
       <div className={styles.targetChart}>
         <div>
           <h2>H1 2022 Target</h2>
-          <Doughnut data={chartData2.data} options={chartData2.options} />
+          <Doughnut data={chartData2.data} options={chartData2.options} onClick={edit ? popupAction2 : null} />
         </div>
         <div>
           <h2>H1 2022 Target</h2>
-          <Doughnut data={chartData3.data} options={chartData3.options} />
+          <Doughnut data={chartData3.data} options={chartData3.options} onClick={edit ? popupAction3 : null} />
         </div>
       </div>
+      {popup && popup3 ? <ChartPopup chartDatas={chartData3} setChartDatas={setChartData3} popupClose={popupClose3} /> : null}
       <p>
         * NB: All pipeline figures and charts exclude our existing guarantee portfolio of Viathan, North South Power, GEL Utility, TSL, LFZC, GPC and PAT. We have also excluded
         five mandated transactions which no longer qualify for the pipeline due to prolonged inactivity.

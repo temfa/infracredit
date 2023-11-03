@@ -2,17 +2,17 @@
 import React from "react";
 import styles from "./styles.module.css";
 import Image from "next/image";
-import Report from "../../../public/images/report.png";
+// import Report from "../../../public/images/report.png";
 import { useRouter } from "next/navigation";
 
-const SingleReportCard = ({ title, number, text, type }: { title: string; number: string; text: string; type: boolean }) => {
+const SingleReportCard = ({ title, type, img }: { title: string; type: boolean; img: any }) => {
   const router = useRouter();
   return (
     <div className={type ? styles.singleReportCardConts : styles.singleReportCardCont}>
-      <Image src={Report} alt="Report" width={285} />
+      <Image src={img} alt="Report" width={260} />
       <h2>{title}</h2>
-      <h3>Work on pages 1,2,3 , should be ready by Monday</h3>
-      <div>
+      <h3>This is the report description for the template, what they are supposed to work on</h3>
+      {/* <div>
         <p>
           {number} <span>users</span>
         </p>
@@ -22,7 +22,7 @@ const SingleReportCard = ({ title, number, text, type }: { title: string; number
           }}>
           {text}
         </h2>
-      </div>
+      </div> */}
     </div>
   );
 };

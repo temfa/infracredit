@@ -8,11 +8,19 @@ import DashboardLayout from "@/component/layouts/dashboard-layout";
 import SingleTask from "@/component/single-task";
 import SingleTeam from "@/component/single-team";
 import { useAppSelector } from "@/reduxtoolkit/store/store";
+import SingleReportCard from "@/component/SmallComponents/singleReportCard";
+import Ceo from "../../../public/images/ceo-report.png";
+import Manage from "../../../public/images/management-report.png";
+import Finance from "../../../public/images/finance.png";
+import New from "../../../public/images/new.png";
+import Nominate from "../../../public/images/nomination.png";
+import Risk from "../../../public/images/risk.png";
+import Plus from "@/component/Svgs/plus";
 
 const Tasks = () => {
   // let role;
   // if (typeof window !== "undefined") {
-  const { role } = useAppSelector((store) => store);
+  const role = useAppSelector((store) => store.role);
   // };
   const [state, setState] = useState(role === "Admin" ? "Teams" : "Tasks");
   return (
@@ -40,7 +48,7 @@ const Tasks = () => {
               onClick={() => {
                 setState("Reports");
               }}>
-              Reports
+              Templates
             </h2>
           </div>
         ) : null}
@@ -81,10 +89,36 @@ const Tasks = () => {
                 </span>
               </h2>
               <div className={styles.taskCont}>
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={false} title="CEO Report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={false} title="MANAGEMENT REPORT" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask
+                  completed={false}
+                  title="FINANCE AND AUDIT COMMITTEE"
+                  comment="Work on pages 1,2,3 , should be ready by Monday"
+                  number={13}
+                  date="Due Monday ,22/04/2023"
+                />
+                <SingleTask
+                  completed={false}
+                  title="NEW BUSINESS/CREDIT COMMITTEE"
+                  comment="Work on pages 1,2,3 , should be ready by Monday"
+                  number={13}
+                  date="Due Monday ,22/04/2023"
+                />
+                <SingleTask
+                  completed={false}
+                  title="REMUNERATION AND NOMINATION COMMITTEE"
+                  comment="Work on pages 1,2,3 , should be ready by Monday"
+                  number={13}
+                  date="Due Monday ,22/04/2023"
+                />
+                <SingleTask
+                  completed={false}
+                  title="RISK AND CAPITAL COMMITTEE"
+                  comment="Work on pages 1,2,3 , should be ready by Monday"
+                  number={13}
+                  date="Due Monday ,22/04/2023"
+                />
               </div>
             </div>
             <div className={styles.taskInProgress}>
@@ -95,10 +129,10 @@ const Tasks = () => {
                 </span>
               </h2>
               <div className={styles.taskCont}>
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                {/* <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-              <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" /> */}
+                <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                {/* <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+              <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" /> */}
               </div>
             </div>
             <div className={styles.taskUnderReview}>
@@ -109,10 +143,10 @@ const Tasks = () => {
                 </span>
               </h2>
               <div className={styles.taskCont}>
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
               </div>
             </div>
             <div className={styles.taskCompleted}>
@@ -123,10 +157,27 @@ const Tasks = () => {
                 </span>
               </h2>
               <div className={styles.taskCont}>
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={true} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={true} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={true} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={true} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+              </div>
+            </div>
+          </div>
+        ) : state === "Reports" ? (
+          <div className={styles.teamsBody}>
+            <div className={styles.teamsCont}>
+              <SingleReportCard title="CEO REPORT" type={false} img={Ceo} />
+              <SingleReportCard title="MANAGEMENT REPORT" type={false} img={Manage} />
+              <SingleReportCard title="FINANCE AND AUDIT COMMITTEE" type={false} img={Finance} />
+              <SingleReportCard title="NEW BUSINESS/CREDIT COMMITTEE" type={false} img={New} />
+            </div>
+            <div className={styles.teamsCont}>
+              <SingleReportCard title="REMUNERATION AND NOMINATION COMMITTEET" type={false} img={Nominate} />
+              <SingleReportCard title="RISK AND CAPITAL COMMITTEE" type={false} img={Risk} />
+              <div className={styles.createNew}>
+                <Plus color="#3183B4" />
+                <h2>Create New Template</h2>
               </div>
             </div>
           </div>
