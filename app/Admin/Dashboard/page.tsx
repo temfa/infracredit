@@ -139,10 +139,10 @@ const Dashboard = () => {
               <SingleReportCard title="Monthly Report Template" number="123,566" text="Edit" type={false} />
             <SingleReportCard title="Weekly Report Template" number="123,566" text="Edit" type={false} /> */}
                   <div>
-                    <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                    <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" completed={false} />
                   </div>
                   <div>
-                    <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                    <SingleTask title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" completed={false} />
                   </div>
                 </div>
               </div>
