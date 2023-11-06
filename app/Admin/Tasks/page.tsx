@@ -129,10 +129,16 @@ const Tasks = () => {
                 </span>
               </h2>
               <div className={styles.taskCont}>
-                <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                {/* <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-              <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" /> */}
+                <SingleTask completed={false} title="CEO Report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask
+                  completed={false}
+                  title="REMUNERATION AND NOMINATION COMMITTEE"
+                  comment="Work on pages 1,2,3 , should be ready by Monday"
+                  number={13}
+                  date="Due Monday ,22/04/2023"
+                />
+                {/* <SingleTask completed={false} title="REMUNERATION AND NOMINATION COMMITTEE" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+              <SingleTask completed={false} title="REMUNERATION AND NOMINATION COMMITTEE" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" /> */}
               </div>
             </div>
             <div className={styles.taskUnderReview}>
@@ -143,10 +149,28 @@ const Tasks = () => {
                 </span>
               </h2>
               <div className={styles.taskCont}>
-                <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask completed={false} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={false} title="CEO Report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask
+                  completed={false}
+                  title="REMUNERATION AND NOMINATION COMMITTEE"
+                  comment="Work on pages 1,2,3 , should be ready by Monday"
+                  number={13}
+                  date="Due Monday ,22/04/2023"
+                />
+                <SingleTask
+                  completed={false}
+                  title="RISK AND CAPITAL COMMITTEE"
+                  comment="Work on pages 1,2,3 , should be ready by Monday"
+                  number={13}
+                  date="Due Monday ,22/04/2023"
+                />
+                <SingleTask
+                  completed={false}
+                  title="NEW BUSINESS AND CREDIT COMMITTEE"
+                  comment="Work on pages 1,2,3 , should be ready by Monday"
+                  number={13}
+                  date="Due Monday ,22/04/2023"
+                />
               </div>
             </div>
             <div className={styles.taskCompleted}>
@@ -157,10 +181,28 @@ const Tasks = () => {
                 </span>
               </h2>
               <div className={styles.taskCont}>
-                <SingleTask completed={true} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask completed={true} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask completed={true} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
-                <SingleTask completed={true} title="Annual report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask completed={true} title="CEO Report" comment="Work on pages 1,2,3 , should be ready by Monday" number={13} date="Due Monday ,22/04/2023" />
+                <SingleTask
+                  completed={true}
+                  title="FINANCE AND AUDIT COMMITTEE"
+                  comment="Work on pages 1,2,3 , should be ready by Monday"
+                  number={13}
+                  date="Due Monday ,22/04/2023"
+                />
+                <SingleTask
+                  completed={true}
+                  title="RISK AND CAPITAL COMMITTEE"
+                  comment="Work on pages 1,2,3 , should be ready by Monday"
+                  number={13}
+                  date="Due Monday ,22/04/2023"
+                />
+                <SingleTask
+                  completed={true}
+                  title="NEW BUSINESS AND CREDIT COMMITTEE"
+                  comment="Work on pages 1,2,3 , should be ready by Monday"
+                  number={13}
+                  date="Due Monday ,22/04/2023"
+                />
               </div>
             </div>
           </div>
