@@ -1,0 +1,103 @@
+.renuBody {
+  width: 100%;
+  border: 1px solid #000;
+  border-bottom: none;
+}
+
+.renuBody > h2 {
+  padding: 10px;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-bottom: 1px solid #000;
+}
+
+.renuBody > input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.renuContentHeader {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+
+.renuContentHeader > p {
+  padding: 10px 0px;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 237.148%;
+}
+
+.renuContentHeader > p:first-child {
+  width: 5%;
+  text-align: center;
+  border-right: 1px solid #000;
+}
+
+.renuContentHeader > p:last-child,
+.renuContentHeader > div {
+  width: 60%;
+  padding: 10px;
+}
+
+.renuContentHeader > p:nth-child(2),
+.renuContentHeader textarea {
+  width: 35%;
+  padding: 10px;
+  border-right: 1px solid #000;
+}
+
+.renuContentHeader textarea {
+  border: none;
+  border-right: 1px solid #000;
+}
+
+.renuContentHeader > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.renuContentType {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.renuContentType h2 {
+  margin: 0px;
+  color: #000;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.renuContentType p {
+  margin: 0px;
+  color: #383838;
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%; /* 18px */
+}
+
+.renuContentType input,
+.renuContentType textarea {
+  width: 100%;
+}
+
+.renuContentType textarea {
+  height: 80px;
+  box-sizing: border-box;
+}

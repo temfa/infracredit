@@ -29,6 +29,7 @@ import UserPopup from "@/component/SmallComponents/userPopup";
 import { toast } from "react-toastify";
 import CeoReport from "@/component/ceo-report";
 import Renumeration from "@/component/renumeration-com";
+import FinanceReport from "@/component/finance-report";
 
 const EditReport = ({ params }: { params: { slug: string } }) => {
   console.log(params);
@@ -120,7 +121,15 @@ const EditReport = ({ params }: { params: { slug: string } }) => {
         <div className={styles.editReportContainer}>
           <EditPages />
           <div className={styles.editReportContent}>
-            {params.slug === "CEOReport" ? <CeoReport edit={edit} /> : params.slug === "REMUNERATIONANDNOMINATIONCOMMITTEE" ? <Renumeration edit={edit} /> : <h2>Hello World</h2>}
+            {params.slug === "CEOReport" ? (
+              <CeoReport edit={edit} />
+            ) : params.slug === "REMUNERATIONANDNOMINATIONCOMMITTEE" ? (
+              <Renumeration edit={edit} />
+            ) : params.slug === "FINANCEANDAUDITCOMMITTEE" ? (
+              <FinanceReport edit={edit} />
+            ) : (
+              <h2>Hello World</h2>
+            )}
           </div>
           <div className={styles.editReportDiscuss}>
             <ReportDescription />
