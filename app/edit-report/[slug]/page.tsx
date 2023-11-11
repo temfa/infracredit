@@ -29,7 +29,7 @@ import UserPopup from "@/component/SmallComponents/userPopup";
 import { toast } from "react-toastify";
 import CeoReport from "@/component/ceo-report";
 import Renumeration from "@/component/renumeration-com";
-import FinanceReport from "@/component/finance-report";
+import { finance, renumeration, risk } from "@/utils/data";
 
 const EditReport = ({ params }: { params: { slug: string } }) => {
   console.log(params);
@@ -124,9 +124,11 @@ const EditReport = ({ params }: { params: { slug: string } }) => {
             {params.slug === "CEOReport" ? (
               <CeoReport edit={edit} />
             ) : params.slug === "REMUNERATIONANDNOMINATIONCOMMITTEE" ? (
-              <Renumeration edit={edit} />
+              <Renumeration edit={edit} data={renumeration} title="REMUNERATION AND NOMINATION COMMITTEE" />
             ) : params.slug === "FINANCEANDAUDITCOMMITTEE" ? (
-              <FinanceReport edit={edit} />
+              <Renumeration edit={edit} data={finance} title="FINANCE AND AUDIT COMMITTEE" />
+            ) : params.slug === "RISKANDCAPITALCOMMITTEE" ? (
+              <Renumeration edit={edit} data={risk} title="RISK AND CAPITAL COMMITTEE" />
             ) : (
               <h2>Hello World</h2>
             )}
