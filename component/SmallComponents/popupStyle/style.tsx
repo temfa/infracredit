@@ -13,7 +13,7 @@ const PopupStyled = styled.div<Sample>`
   height: ${({ height }) => height};
   border-radius: 16px;
   background: #fff;
-  padding: 16px 16px 48px 48px;
+  padding: 16px 48px;
   box-sizing: border-box;
 `;
 

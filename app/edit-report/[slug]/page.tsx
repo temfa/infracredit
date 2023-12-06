@@ -30,9 +30,9 @@ import { toast } from "react-toastify";
 import CeoReport from "@/component/ceo-report";
 import Renumeration from "@/component/renumeration-com";
 import { finance, renumeration, risk } from "@/utils/data";
+import ReportLayout from "@/component/layouts/report-layout";
 
 const EditReport = ({ params }: { params: { slug: string } }) => {
-  console.log(params);
   const router = useRouter();
   const [edit, setEdit] = useState(false);
   const [title, setTitle] = useState(
@@ -118,26 +118,19 @@ const EditReport = ({ params }: { params: { slug: string } }) => {
             <button>Submit</button>
           </div>
         </div>
-        <div className={styles.editReportContainer}>
-          <EditPages />
-          <div className={styles.editReportContent}>
-            {params.slug === "CEOReport" ? (
-              <CeoReport edit={edit} />
-            ) : params.slug === "REMUNERATIONANDNOMINATIONCOMMITTEE" ? (
-              <Renumeration edit={edit} data={renumeration} title="REMUNERATION AND NOMINATION COMMITTEE" />
-            ) : params.slug === "FINANCEANDAUDITCOMMITTEE" ? (
-              <Renumeration edit={edit} data={finance} title="FINANCE AND AUDIT COMMITTEE" />
-            ) : params.slug === "RISKANDCAPITALCOMMITTEE" ? (
-              <Renumeration edit={edit} data={risk} title="RISK AND CAPITAL COMMITTEE" />
-            ) : (
-              <h2>Hello World</h2>
-            )}
-          </div>
-          <div className={styles.editReportDiscuss}>
-            <ReportDescription />
-            <Comments />
-          </div>
-        </div>
+        <ReportLayout>
+          {params.slug === "CEOReport" ? (
+            <CeoReport edit={edit} />
+          ) : params.slug === "REMUNERATIONANDNOMINATIONCOMMITTEE" ? (
+            <Renumeration edit={edit} data={renumeration} title="REMUNERATION AND NOMINATION COMMITTEE" />
+          ) : params.slug === "FINANCEANDAUDITCOMMITTEE" ? (
+            <Renumeration edit={edit} data={finance} title="FINANCE AND AUDIT COMMITTEE" />
+          ) : params.slug === "RISKANDCAPITALCOMMITTEE" ? (
+            <Renumeration edit={edit} data={risk} title="RISK AND CAPITAL COMMITTEE" />
+          ) : (
+            <h2>Hello World</h2>
+          )}
+        </ReportLayout>
       </div>
     </div>
   );

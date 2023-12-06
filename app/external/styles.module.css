@@ -1,0 +1,106 @@
+.editReport {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.editReportBodys {
+    width: 100%;
+    background: var(--infra-neutral-25, #f4f7ff);
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.editReportBody {
+    width: 100%;
+    background: var(--infra-neutral-25, #f4f7ff);
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.editHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.editHeader>h2 {
+    color: var(--infra-neutral-900, #131628);
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.editHeader>div {
+    width: 159px;
+}
+
+.alertPopup {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+}
+
+.alertText {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.alertText div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+}
+
+.alertText div h2 {
+    color: var(--infra-primary-1900, #000A44);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.alertText div p {
+    color: var(--infra-neutral-300, #A4A7B4);
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.alertText div span {
+    color: var(--infra-neutral-900, #272A3C);
+}
+
+.alertText>h2 {
+    border-radius: 8px;
+    background: var(--infra-neutral-25, #F4F7FF);
+    padding: 8px 0px;
+    color: var(--infra-neutral-700, #545764);
+    font-family: "Inter", sans-serif;
+    width: 100%;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+}

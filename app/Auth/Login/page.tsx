@@ -23,7 +23,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRoles] = useState("");
-  const roles = ["User", "Admin", "Manager", "Supervisor"];
+  const roles = ["User", "Admin", "Manager", "Supervisor", "External User"];
   return (
     <div className={styles.pageCov}>
       <div className={styles.secionA}>
@@ -87,9 +87,15 @@ const Login = () => {
                       if (split[1] === "infracredit.ng") {
                         // localStorage.setItem("role", role);
                         dispatch(setRole(role));
+
                         router.push("/admin/Dashboard");
                       } else {
-                        toast.error("Email must be an Infracredit email");
+                        if (role === "External User") {
+                          dispatch(setRole(role));
+                          router.push("/external");
+                        } else {
+                          toast.error("Email must be an Infracredit email");
+                        }
                       }
                     }, 2000);
                   }}
